@@ -1,0 +1,23 @@
+.charts {
+	/*background-color: rgba(0, 0, 0, 0.8);*/
+}
+.charts, .content, .bars {width: 100%;height: 100%;}
+.bars div {
+	position: absolute;
+	bottom: 5%;
+	height: 40%;
+	background-color: rgba(0,0,0 , 0.8);
+	width: 60px;
+	text-align: center;
+}
+.bars div:nth-child(1) {
+	margin: 0 2%;
+}
+.bars div:nth-child(2) {
+	margin: 0 15%;
+}
+.bars .point {
+	position: relative;
+	color: whitesmoke;
+	font-size: 2.5em;
+}

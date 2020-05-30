@@ -1,0 +1,10 @@
+.olezha {
+	width: 400px;
+	height: 400px;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-image: url('/assets/images/banner.png');
+	background-size: contain;
+	display: none;
+}

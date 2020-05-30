@@ -1,0 +1,141 @@
+{
+	"config": {
+		"path": "{ROOT}/libraries/"
+	},
+	"collection": [
+		{
+			"name": "jquery",
+			"files": {
+				"js": [
+					"jquery/dist/jquery.min.js"
+				]
+			}
+		},
+		{
+			"name": "bootstrap",
+			"files": {
+				"css": [
+					"bootstrap/dist/css/bootstrap.min.css"
+				]
+			},
+			"require": [
+				"popper.js"
+			]
+		},
+		{
+			"name": "modernizr",
+			"files": {
+				"js": [
+					"modernizr/dist/modernizr.min.js"
+				]
+			},
+			"require": [
+				"popper.js"
+			]
+		},
+		{
+			"name": "animate.css",
+			"files": {
+				"js": [
+					"jquery/dist/jquery.min.js"
+				]
+			}
+		},
+		{
+			"name": "fontawesome",
+			"files": {
+				"css": [
+					"font-awesome/css/font-awesome.min.css"
+				]
+			}
+		},
+		{
+			"name": "lineawesome",
+			"files": {
+				"css": [
+					"line-awesome/dist/line-awesome/css/line-awesome.min.css"
+				]
+			}
+		},
+		{
+			"name": "magnific-popup",
+			"files": {
+				"js": [
+					"magnific-popup/dist/jquery.magnific-popup.min.js"
+				],
+				"css": [
+					"magnific-popup/dist/magnific-popup.css"
+				]
+			},
+			"require": [
+				"jquery"
+			]
+		},
+		{
+			"name": "popper.js",
+			"files": {
+				"js": [
+					"popper.js/dist/umd/popper.min.js"
+				]
+			},
+			"require": [
+				"jquery"
+			]
+		},
+		{
+			"name": "hls.js",
+			"files": {
+				"js": [
+					"hls.js/dist/hls.min.js"
+				]
+			},
+			"require": [
+				"video.js"
+			]
+		},
+		{
+			"name": "video.js",
+			"files": {
+				"css": [
+					"video.js/dist/video-js.min.css"
+				],
+				"js": [
+					"video.js/dist/video.js"
+				]
+			},
+			"require": [
+				"video.js-contrib-hlsjs"
+			]
+		},
+		{
+			"name": "video.js-contrib-hlsjs",
+			"files": {
+				"js": [
+					"videojs-contrib-hls.js/dist/videojs-contrib-hlsjs.min.js"
+				]
+			}
+		},
+		{
+			"name": "overlayscrollbars",
+			"files": {
+				"css": [
+					"overlayscrollbars/css/OverlayScrollbars.min.css"
+				],
+				"js": [
+					"overlayscrollbars/js/jquery.overlayScrollbars.min.js"
+				]
+			},
+			"require": [
+				"jquery"
+			]
+		},
+		{
+			"name": "socket.io",
+			"files": {
+				"js": [
+					"socket.io-client/dist/socket.io.js"
+				]
+			}
+		}
+	]
+}

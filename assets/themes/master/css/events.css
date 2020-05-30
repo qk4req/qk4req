@@ -1,0 +1,32 @@
+.events {
+	left: 0;
+	font-size: 2em;
+	margin-top: 400px;
+	height: 100%;
+	width: 100%;
+}
+.event {
+	display: none;
+	width: 100%;
+	/*width: 380px;*/
+	height: 80px;
+	background-size: 80px 80px !important;
+}
+.event span {
+	display: block;
+	padding: 25px;
+	background-color: rgba(0,0,0,0.8);
+	/*width: 300px;*/
+	height: 30px;
+	margin-left: 80px;
+	margin-top: 10px;
+}
+.event.donation, .event.easter_egg {
+	background: url("/assets/images/event_1.png") no-repeat;
+}
+.event.follower {
+	background: url("/assets/images/event_2.png") no-repeat;
+}
+.event.subscription {
+	background: url("/assets/images/event_3.png") no-repeat;
+}
