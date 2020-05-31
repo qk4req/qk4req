@@ -26,13 +26,13 @@ class Broadcaster extends Admin {
 return [
 	'roles' => new Roles([
 		new Guest(
-			[\Controllers\OnPublishController::class]
+			[\Controllers\OnPublishController::class, \Controllers\ChannelController::class]
 		),
 		new User(
-			[\Controllers\OnPublishController::class]
+			[\Controllers\ChannelController::class]
 		),
 		new Admin(
-			[\Controllers\OnPublishController::class]
+			[\Controllers\ChannelController::class]
 		),
 		new Broadcaster(
 			[\Controllers\OnPublishController::class]
