@@ -1,6 +1,8 @@
 <?php
 namespace RBAC\Roles;
 
+use Controllers\API;
+
 use RBAC\Roles\{
 	Role,
 	Guest,
@@ -26,7 +28,13 @@ class Broadcaster extends Admin {
 return [
 	'roles' => new Roles([
 		new Guest(
-			[\Controllers\OnPublishController::class, \Controllers\ChannelController::class]
+			[
+				API\DonationsController::class,
+				API\FollowersController::class,
+				API\SubscriptionsController::class,
+				API\OnPublishController::class,
+				\Controllers\ChannelController::class
+			]
 		),
 		new User(
 			[\Controllers\ChannelController::class]
@@ -35,7 +43,10 @@ return [
 			[\Controllers\ChannelController::class]
 		),
 		new Broadcaster(
-			[\Controllers\OnPublishController::class]
+			[
+				\Controllers\OnPublishController::class,
+				\Controllers\ChannelController::class
+			]
 		)
 	])
 ];

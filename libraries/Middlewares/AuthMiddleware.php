@@ -17,12 +17,12 @@ use Providers\AuthProvider as Auth;
 
 class AuthMiddleware implements MiddlewareInterface
 {
-	protected $actionAttributeName;
+	protected $action;
 	private $jwt;
 	private $rbac;
 
-	public function __construct($actionAttributeName = "__action", JWT $jwt, AccessControl $rbac) {
-		$this->actionAttributeName = $actionAttributeName;
+	public function __construct($action = "__action", JWT $jwt, AccessControl $rbac) {
+		$this->action = $action;
 		$this->jwt = $jwt;
 		$this->rbac = $rbac;
 
@@ -47,7 +47,7 @@ class AuthMiddleware implements MiddlewareInterface
 
 		App::set(Environment::class, $renderer);
 		App::set(Auth::class, $auth);
-		if (!$role->hasPermission($request->getAttribute($this->actionAttributeName))) throw new ForbiddenException;
+		if (!$role->hasPermission($request->getAttribute($this->action))) throw new ForbiddenException;
 		return $handler->handle($request);
 	}
 }

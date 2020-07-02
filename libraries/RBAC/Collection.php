@@ -12,26 +12,49 @@ abstract class Collection extends ArrayObject {
 		}
 	}
 
-	public function g($name) {
-		return $this->offsetGet($this->getIndexBySynonym($name, $name));
+	public function g($key) {
+		return $this->offsetGet($this->getIndex($key));
 	}
 
-	public function u($name) {
-		$this->offsetUnset($this->getIndexBySynonym($name, $name));
+	public function u($key) {
+		$this->offsetUnset($this->getIndex($key));
 		return $this;
 	}
 
-	public function e($name) {
-		return $this->offsetExists($this->getIndexBySynonym($name, $name));
+	public function e($key) {
+		return $this->offsetExists($this->getIndex($key));
 	}
 
-	public function getIndexBySynonym($synonym, $def = null) {
+	private function root($key) {
+		if (strpos($key, '::')) {
+			list($className, $method) = explode('::', $key);
+			foreach ($this->getIterator() as $i => $el) {
+				if ($i === $className) return $i;
+			}
+			return false;
+		} else return false;
+	}
+
+	private function synonym($synonym, $def = null) {
 		if (strpos($synonym, '\\') === false) {
-			foreach ($this->getIterator() as $i=>$el) {
+			foreach ($this->getIterator() as $i => $el) {
 				if ($el->hasSynonym($synonym)) return $i;
 			}
 			return $def;
-			;
 		} else return $def;
+	}
+
+	private function getIndex($key) {
+		$key = $this->normalizeKey($key);
+		return ($i = $this->root($key)) ? $i : $this->synonym($key, $key);
+	}
+
+	private function normalizeKey($key) {
+		if (is_array($key)) {
+			list($className, $method) = $key;
+			$key = $className.'::'.$method;
+		} elseif (is_string($key)) {
+		}
+		return $key;
 	}
 }

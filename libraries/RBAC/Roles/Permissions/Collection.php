@@ -8,9 +8,13 @@ use RBAC\{
 
 class Collection extends RBACCollection {
 	public function s($permission) {
-		if (is_string($permission) && !empty($permission)) {
+		if (is_string($permission)) {
 			$this->offsetSet($permission, new Permission);
-		} elseif ($permission instanceof Permission) {
+		} elseif (is_array($permission)) {
+			list($className, $method) = $permission;
+			$this->offsetSet($className.'::'.$method, new Permission);
+		}
+		elseif ($permission instanceof Permission) {
 			$this->offsetSet(get_class($permission), $permission);
 		}
 		return $this;

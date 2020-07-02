@@ -5,9 +5,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="users")
+ * @ORM\Table(name="followers")
  */
-class UserModel
+class FollowerModel
 {
 	/** 
 	 * @ORM\Id
@@ -20,13 +20,19 @@ class UserModel
 	 */
 	protected $name;
 	/** 
-	 * @ORM\Column(type="string") 
+	 * @ORM\Column(type="integer") 
 	 */
-	protected $signature;
+	protected $created_at;
 
 	public function getId()
 	{
 		return $this->id;
+	}
+
+	public function setId($id)
+	{
+		$this->id = $id;
+		return $this;
 	}
 
 	public function getName()
@@ -40,12 +46,10 @@ class UserModel
 		return $this;
 	}
 
-	public function getSignature($signature) {
-		return $this->signature;
+	public function getCreatedAt()
+	{
+		return $this->created_at;
 	}
-
-	public function setSignature($signature) {
-		$this->signature = md5($signature);
-		return $this;
-	}
+	
+	use NotificationTrait;
 }

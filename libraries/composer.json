@@ -20,6 +20,10 @@
         "middlewares/negotiation": "^2.0",
         "middlewares/http-authentication": "^2.0",
         "middlewares/error-handler": "^3.0",
-        "requtize/assetter": "1.0.0"
+        "requtize/assetter": "1.0.0",
+        "lancerhe/php-crypt": "^1.1",
+        "symfony/validator": "^5.1",
+        "symfony/serializer": "^5.1",
+        "symfony/property-access": "^5.1"
     }
 }

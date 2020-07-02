@@ -7,8 +7,11 @@ class App
 
 	public static function run() {
 		$containerBuilder = new \DI\ContainerBuilder;
-		foreach (glob(CONFIGS_DIR.'*') as $fn) {
-			$containerBuilder->addDefinitions($fn);
+		$dir = new \RecursiveDirectoryIterator(CONFIGS_DIR);
+		$ite = new \RecursiveIteratorIterator($dir);
+		$fileList = [];
+		foreach($ite as $file) {
+			if (is_file($p = $file->getPathname())) $containerBuilder->addDefinitions($p);
 		}
 		self::$container = $containerBuilder->build();
 

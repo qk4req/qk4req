@@ -12,13 +12,14 @@ use Laminas\Diactoros\{
 };
 use WoohooLabs\Harmony\Middleware\{
 	FastRouteMiddleware,
-	DispatcherMiddleware,
+	//DispatcherMiddleware,
 	HttpHandlerRunnerMiddleware
 };
 use Middlewares\{
 	ErrorHandler,
 	PhpSession,
-	AuthMiddleware
+	AuthMiddleware,
+	DispatcherMiddleware
 };
 
 return [
