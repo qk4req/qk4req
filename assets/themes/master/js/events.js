@@ -21,7 +21,8 @@ socket.on("connect", function() {
 
 setInterval(function() {
 	if (events.length === 0 || playing !== false) return;
-	var event = events[0];
+	var event = events[0], announcement = (event['notification'] !== undefined || event['notification'] !== null) ? event['notification'] : event['easter_egg'];//notification = event['notification'], easterEgg = event['eas'];
+	announcement['type'] = (announcement['type'] !== undefined || announcement['type'] !== null) ? announcement['type'] : 'easter_egg';
 	playing = true;
 	if ($(".right-sidebar .event.bounceInRight").length > 3) {
 		var first = $(".right-sidebar .event.bounceInRight").first();
@@ -30,20 +31,20 @@ setInterval(function() {
 			first.hide();
 		});
 	}
-	$(".right-sidebar").append(`<div class="event ${event["notification"]["type"]}"><span>${
-		(["donation", "easter_egg"].indexOf(event["notification"]["type"]) !== -1 ? `${event["from"]} - ${event["amount"]} <i class="fas fa-${(event["currency"] in signs ? signs[event["currency"]] : "ruble")}-sign fa-xs"></i>` : `${event["name"]}`)
+	$(".right-sidebar").append(`<div class="event ${announcement["type"]}"><span>${
+		(["donation", "easter_egg"].indexOf(announcement["type"]) !== -1 ? `${event["from"]} - ${event["amount"]} <i class="fas fa-${(event["currency"] in signs ? signs[event["currency"]] : "ruble")}-sign fa-xs"></i>` : `${event["name"]}`)
 	}</span></div>`).find(".event").last().jAnimate("bounceInRight").show();
 
 	soundManager.createSound({
 		id: "ne-"+event["_id"],
-		url: event["notification"]["src"],
+		url: announcement["src"],
 		autoLoad: true,
-		volume: Number.parseInt(event["notification"]["volume"]*100),
+		volume: Number.parseInt(announcement["volume"]*100),
 		onload: function() {
 			this.play();
 		},
 		onfinish: function() {
-			if (["donation", "easter_egg"].indexOf(event["notification"]["type"]) !== -1) {
+			if (["donation", "easter_egg"].indexOf(announcement["type"]) !== -1) {
 				setTimeout(function() {
 					soundManager.createSound({
 						id: "de-"+event["_id"],

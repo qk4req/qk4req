@@ -42,6 +42,14 @@
 			}
 		},
 		{
+			"name": "janimate",
+			"files": {
+				"js": [
+					"janimate/dist/janimate.min.js"
+				]
+			}
+		},
+		{
 			"name": "fontawesome",
 			"files": {
 				"css": [

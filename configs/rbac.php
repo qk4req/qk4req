@@ -1,7 +1,17 @@
 <?php
 namespace RBAC\Roles;
 
-use Controllers\API;
+use Controllers\{
+	HeaderController,
+	EventsController,
+	OlezhaController
+};
+use Controllers\API\{
+	DonationsController,
+	FollowersController,
+	SubscriptionsController,
+	OnPublishController
+};
 
 use RBAC\Roles\{
 	Role,
@@ -29,24 +39,23 @@ return [
 	'roles' => new Roles([
 		new Guest(
 			[
-				API\DonationsController::class,
-				API\FollowersController::class,
-				API\SubscriptionsController::class,
-				API\OnPublishController::class,
-				\Controllers\ChannelController::class
+				DonationsController::class,
+				FollowersController::class,
+				SubscriptionsController::class,
+				OnPublishController::class,
+				HeaderController::class,
+				EventsController::class,
+				OlezhaController::class
 			]
 		),
 		new User(
-			[\Controllers\ChannelController::class]
+			[]
 		),
 		new Admin(
-			[\Controllers\ChannelController::class]
+			[]
 		),
 		new Broadcaster(
-			[
-				\Controllers\OnPublishController::class,
-				\Controllers\ChannelController::class
-			]
+			[]
 		)
 	])
 ];

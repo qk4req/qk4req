@@ -1,5 +1,5 @@
 <?php
-namespace Models;
+namespace Models\User;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="users")
  */
-class UserModel
+class Entity
 {
 	/** 
 	 * @ORM\Id

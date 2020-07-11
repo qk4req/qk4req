@@ -15,11 +15,14 @@ return [
 			$r->addRoute('POST', '/play', API\OnPlayController::class);
 		});
 		$r->addGroup('/api', function (RouteCollector $r) {
-			$r->addRoute('GET', '/donations', API\DonationsController::class);
+			$r->addGroup('/donations', function(RouteCollector $rr) {
+				$rr->addRoute('GET', '/last', [API\DonationsController::class, 'last']);
+				$rr->addRoute('GET', '/top', [API\DonationsController::class, 'top']);
+			});
 			$r->addRoute('GET', '/followers', API\FollowersController::class);
 			$r->addRoute('GET', '/subscriptions', API\SubscriptionsController::class);
 		});
-		$r->get('/tops', \Controllers\TopsController::class);
+		$r->get('/header', \Controllers\HeaderController::class);
 		$r->get('/olezha', \Controllers\OlezhaController::class);
 	})
 ];

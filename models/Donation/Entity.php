@@ -1,17 +1,18 @@
 <?php
-namespace Models;
+namespace Models\Donation;
 
 use Models\{
-	NotificationModel,
-	EasterEggModel
+	NotificationTrait,
+	Notification\Entity as NotificationEntity,
+	EasterEgg\Entity as EasterEggEntity
 };
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Models\Donation\Repository")
  * @ORM\Table(name="donations")
  */
-class DonationModel
+class Entity
 {
 	/** 
 	 * @ORM\Id
@@ -79,7 +80,7 @@ class DonationModel
 	use NotificationTrait;
 
 	/**
-	 * @ORM\ManyToOne(targetEntity="Models\EasterEggModel", inversedBy="easter_eggs")
+	 * @ORM\ManyToOne(targetEntity="Models\EasterEgg\Entity", inversedBy="easter_eggs")
 	 */
 	private $easter_egg;
 
@@ -88,7 +89,7 @@ class DonationModel
 		return $this->easter_egg;
 	}
 
-	public function setEasterEgg(?EasterEggModel $ee)
+	public function setEasterEgg(?EasterEggEntity $ee)
 	{
 		$this->easter_egg = $ee;
 		return $this;

@@ -1,5 +1,5 @@
 <?php
-namespace Models;
+namespace Models\EasterEgg;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="easter_eggs")
  */
-class EasterEggModel
+class Entity
 {
 	/** 
 	 * @ORM\Id

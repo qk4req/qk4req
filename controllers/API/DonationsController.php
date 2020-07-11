@@ -1,20 +1,24 @@
 <?php
 namespace Controllers\API;
 
-use App, MVC\Controller, Models\DonationModel;
+use App, MVC\Controller, Models\Donation\Entity;
 use Laminas\Diactoros\{ServerRequest, Response\JsonResponse};
 use Doctrine\ORM\EntityManager;
-use Symfony\Component\Serializer\Serializer;
+//use Symfony\Component\Serializer\Serializer;
 
 class DonationsController extends Controller {
-	public function __invoke(EntityManager $man, Serializer $ser)
+	public function __invoke(EntityManager $man)
 	{
 		return $this->read($man, $ser);
 	}
+
+	public function read(EntityManager $man) {
+		return $this->last($man, $ser);
+	}
 	
-	public function read(EntityManager $man, Serializer $ser)
+	public function last(EntityManager $man)
 	{
-		$repo = $man->getRepository(DonationModel::class);
+		$repo = $man->getRepository(Entity::class);
 		$a = $repo->findBy([], ['id'=>'DESC'], 3);
 		$donations = [];
 		foreach ($a as $b) {
@@ -41,5 +45,12 @@ class DonationsController extends Controller {
 			];
 		}
 		return new JsonResponse($donations);
+	}
+	
+	public function top(ServerRequest $req, EntityManager $man)
+	{
+		return new JsonResponse(
+			$man->getRepository(Entity::class)->makeTop($req->getQueryParams()['period'])
+		);
 	}
 }

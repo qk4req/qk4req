@@ -1,5 +1,5 @@
 <?php
-namespace Models;
+namespace Models\Notification;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="notifications")
  */
-class NotificationModel
+class Entity
 {
 	/** 
 	 * @ORM\Id
@@ -16,7 +16,7 @@ class NotificationModel
 	 */
 	protected $id;
     /** 
-     * @ORM\Column(type="string", columnDefinition="ENUM('donation','follower','subscription','easter_egg','progress_bar')")
+     * @ORM\Column(type="string", columnDefinition="ENUM('donation','follower','subscription','progress_bar')")
      */
     protected $type;
     /** 

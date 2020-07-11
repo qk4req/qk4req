@@ -49,7 +49,7 @@ abstract class Model
 		return $this->queryBuilder->select([
 			'MAX('.$aggregateExpr.')'
 		]);
-	}*/
+	}
 	private $entityManager;
 	protected $entities = [];
 
@@ -59,5 +59,5 @@ abstract class Model
 
 	public function attachEntity () {
 			
-	}
+	}*/
 }

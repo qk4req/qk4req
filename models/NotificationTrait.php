@@ -1,13 +1,13 @@
 <?php
 namespace Models;
 
-use Models\NotificationModel;
+use Models\Notification\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 trait NotificationTrait
 {
 	/**
-	 * @ORM\ManyToOne(targetEntity="Models\NotificationModel", inversedBy="notifications")
+	 * @ORM\ManyToOne(targetEntity="Models\Notification\Entity", inversedBy="notifications")
 	 */
 	private $notification;
 
@@ -16,7 +16,7 @@ trait NotificationTrait
 		return $this->notification;
 	}
 
-	public function setNotification(?NotificationModel $notification)
+	public function setNotification(?Entity $notification)
 	{
 		$this->notification = $notification;
 		return $this;

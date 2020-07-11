@@ -3,13 +3,13 @@ namespace Views;
 
 use App, MVC\View;
 
-class TopsView extends View {
+class HeaderView extends View {
 	protected $assets = [
 		'jquery',
 		'animate.css',
 		'janimate',
 		'fontawesome',
 		'overlay',
-		'tops'
+		'header'
 	];
 }

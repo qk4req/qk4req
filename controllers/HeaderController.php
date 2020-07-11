@@ -1,14 +1,14 @@
 <?php
 namespace Controllers;
 
-use App, MVC\Controller, Views\TopsView;
+use App, MVC\Controller, Views\HeaderView;
 use Laminas\Diactoros\{ServerRequest, Response};
 
-class TopsController extends Controller {
+class HeaderController extends Controller {
 	public function __invoke(ServerRequest $request, Response $response): Response
 	{
-		$topsView = App::get(TopsView::class);
-		$response->getBody()->write($topsView->render());
+		$headerView = App::get(HeaderView::class);
+		$response->getBody()->write($headerView->render());
 
 		return $response;
 	}

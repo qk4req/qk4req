@@ -1,13 +1,14 @@
 <?php
-namespace Models;
+namespace Models\Subscription;
 
+use Models\NotificationTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="followers")
+ * @ORM\Table(name="subscriptions")
  */
-class FollowerModel
+class Entity
 {
 	/** 
 	 * @ORM\Id
@@ -19,6 +20,10 @@ class FollowerModel
 	 * @ORM\Column(type="string") 
 	 */
 	protected $name;
+	/** 
+	 * @ORM\Column(type="integer") 
+	 */
+	protected $months;
 	/** 
 	 * @ORM\Column(type="integer") 
 	 */
@@ -44,6 +49,11 @@ class FollowerModel
 	{
 		$this->name = $name;
 		return $this;
+	}
+
+	public function getMonths()
+	{
+		return $this->created_at;
 	}
 
 	public function getCreatedAt()

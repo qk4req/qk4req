@@ -1,20 +1,20 @@
 <?php
 namespace Controllers\API;
 
-use App, MVC\Controller, Models\FollowerModel;
+use App, MVC\Controller, Models\Follower\Entity;
 use Laminas\Diactoros\{ServerRequest, Response\JsonResponse};
 use Doctrine\ORM\EntityManager;
-use Symfony\Component\Serializer\Serializer;
+//use Symfony\Component\Serializer\Serializer;
 
 class FollowersController extends Controller {
-	public function __invoke(EntityManager $man, Serializer $ser)
+	public function __invoke(EntityManager $man)
 	{
 		return $this->read($man, $ser);
 	}
 	
-	public function read(EntityManager $man, Serializer $ser)
+	public function read(EntityManager $man)
 	{
-		$repo = $man->getRepository(FollowerModel::class);
+		$repo = $man->getRepository(Entity::class);
 		$a = $repo->findBy([], ['id'=>'DESC'], 3);
 		$followers = [];
 		foreach ($a as $b) {
