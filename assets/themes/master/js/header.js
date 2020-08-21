@@ -79,7 +79,11 @@ setInterval(function() {
 			}
 		});
 	}
+	show();
+}, 300000);//interval
 
+
+function show() {
 	if (header.length > 0 && loaded === true) {
 		index = (index >= header.length) ? 0 : index + 1;
 		$(`.header .block`).each(function(i, block)  {
@@ -101,4 +105,4 @@ setInterval(function() {
 			}, 2000 * i);//interval between block appearances
 		});
 	}
-}, 300000);//interval
+}
