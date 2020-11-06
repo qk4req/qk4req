@@ -24,10 +24,6 @@ class Entity
 	 */
 	protected $value;
 	/** 
-	 * @ORM\Column(type="float")
-	 */
-	protected $volume;
-	/** 
 	 * @ORM\Column(type="string")
 	 */
 	protected $src;
@@ -42,10 +38,6 @@ class Entity
 
 	public function getValue() {
 		return $this->value;
-	}
-
-	public function getVolume() {
-		return $this->volume;
 	}
 
 	public function getSrc() {

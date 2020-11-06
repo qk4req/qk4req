@@ -1,0 +1,860 @@
+[ ] 14.16:47:49 TwoRatChat started. Version: 3.8.6338.18947
+[ ] 14.16:47:51 CommandFactory loaded
+[W] 14.16:47:51 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.16:57:05 TwoRatChat started. Version: 3.8.6338.18947
+[ ] 14.16:57:07 CommandFactory loaded
+[W] 14.16:57:08 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.17:04:04 TwoRatChat started. Version: 3.8.6338.18947
+[ ] 14.17:04:06 CommandFactory loaded
+[W] 14.17:04:07 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.17:41:26 TwoRatChat started. Version: 3.8.6338.18947
+[ ] 14.17:41:27 CommandFactory loaded
+[W] 14.17:41:28 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.17:42:15 TwoRatChat started. Version: 3.8.6338.18947
+[ ] 14.17:42:16 CommandFactory loaded
+[W] 14.17:42:17 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.17:42:53 TwoRatChat started. Version: 3.8.6338.18947
+[ ] 14.17:42:55 CommandFactory loaded
+[W] 14.17:42:55 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.17:43:10 TwoRatChat started. Version: 3.8.6338.18947
+[ ] 14.17:43:12 CommandFactory loaded
+[W] 14.17:43:12 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:01:32 TwoRatChat started. Version: 3.8.6338.18947
+[ ] 14.18:01:34 CommandFactory loaded
+[W] 14.18:01:34 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:02:26 TwoRatChat started. Version: 3.8.6338.18947
+[ ] 14.18:02:27 CommandFactory loaded
+[W] 14.18:02:28 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:05:19 TwoRatChat started. Version: 3.8.6588.32543
+[ ] 14.18:05:20 CommandFactory loaded
+[W] 14.18:05:21 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:06:16 TwoRatChat started. Version: 3.8.6588.32543
+[ ] 14.18:06:18 CommandFactory loaded
+[W] 14.18:06:19 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:07:21 TwoRatChat started. Version: 3.8.6588.32543
+[ ] 14.18:07:23 CommandFactory loaded
+[W] 14.18:07:23 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:08:21 TwoRatChat started. Version: 3.8.6588.32543
+[ ] 14.18:08:23 CommandFactory loaded
+[W] 14.18:08:32 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:08:43 TwoRatChat started. Version: 3.8.6588.32543
+[ ] 14.18:08:45 CommandFactory loaded
+[W] 14.18:08:49 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:11:02 TwoRatChat started. Version: 3.8.6588.32543
+[ ] 14.18:11:04 CommandFactory loaded
+[W] 14.18:11:04 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:17:48 TwoRatChat started. Version: 3.8.6588.32933
+[ ] 14.18:17:50 CommandFactory loaded
+[W] 14.18:17:55 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:18:49 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:18:51 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:18:53 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:19:05 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:19:07 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:19:11 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:19:38 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:19:40 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[ ] 14.18:19:47 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:19:49 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:19:50 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:20:03 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:20:05 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:20:08 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:20:28 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:20:30 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:20:34 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:21:29 TwoRatChat started. Version: 3.8.6588.32933
+[ ] 14.18:21:31 CommandFactory loaded
+[W] 14.18:21:32 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:21:52 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:21:54 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:21:55 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:23:24 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:23:25 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:23:28 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:23:54 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:23:55 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:23:56 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:24:29 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:24:30 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:24:32 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:25:08 TwoRatChat started. Version: 3.8.6588.32933
+[!] 14.18:25:11 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:25:13 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 92
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:25:56 TwoRatChat started. Version: 3.8.6588.33177
+[!] 14.18:26:09 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 93
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[ ] 14.18:26:48 TwoRatChat started. Version: 3.8.6588.33203
+[!] 14.18:26:53 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 93
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[ ] 14.18:27:08 TwoRatChat started. Version: 3.8.6588.33213
+[!] 14.18:27:11 App_DispatcherUnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 93
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:27:12 CurrentDomain_UnhandledException: System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в TwoRatChat.Model.Chat.Load() в X:\NewSources\TwoRatChat\TwoRatChat.Main\Model\Chat.cs:строка 93
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 180
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:27:49 TwoRatChat started. Version: 3.8.6588.33234
+[ ] 14.18:27:51 CommandFactory loaded
+[W] 14.18:27:51 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:29:57 TwoRatChat started. Version: 3.8.6588.33234
+[ ] 14.18:30:04 CommandFactory loaded
+[W] 14.18:30:05 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:30:33 TwoRatChat started. Version: 3.8.6588.33234
+[ ] 14.18:30:34 CommandFactory loaded
+[W] 14.18:30:35 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:31:47 TwoRatChat started. Version: 3.8.6588.33234
+[ ] 14.18:31:48 CommandFactory loaded
+[W] 14.18:31:49 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:35:35 TwoRatChat started. Version: 3.8.6588.33234
+[!] 14.18:35:37 App_DispatcherUnhandledException: System.Net.HttpListenerException (0x80004005): Прослушивание префикса 'http://localhost:2222/' невозможно, так как он вступает в конфликт с существующей регистрацией на этом компьютере.
+   в System.Net.HttpListener.AddAllPrefixes()
+   в System.Net.HttpListener.Start()
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 185
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:35:39 CurrentDomain_UnhandledException: System.Net.HttpListenerException (0x80004005): Прослушивание префикса 'http://localhost:2222/' невозможно, так как он вступает в конфликт с существующей регистрацией на этом компьютере.
+   в System.Net.HttpListener.AddAllPrefixes()
+   в System.Net.HttpListener.Start()
+   в TwoRatChat.Main.MainWindow.Window_Loaded(Object sender, RoutedEventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 185
+   в System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   в System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   в System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   в System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   в System.Windows.BroadcastEventHelper.BroadcastEvent(DependencyObject root, RoutedEvent routedEvent)
+   в System.Windows.BroadcastEventHelper.BroadcastLoadedEvent(Object root)
+   в MS.Internal.LoadedOrUnloadedOperation.DoWork()
+   в System.Windows.Media.MediaContext.FireLoadedPendingCallbacks()
+   в System.Windows.Media.MediaContext.FireInvokeOnRenderCallbacks()
+   в System.Windows.Media.MediaContext.RenderMessageHandlerCore(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.RenderMessageHandler(Object resizedCompositionTarget)
+   в System.Windows.Media.MediaContext.Resize(ICompositionTarget resizedCompositionTarget)
+   в System.Windows.Interop.HwndTarget.OnResize()
+   в System.Windows.Interop.HwndTarget.HandleMessage(WindowMessage msg, IntPtr wparam, IntPtr lparam)
+   в System.Windows.Interop.HwndSource.HwndTargetFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[!] 14.18:35:39 App_DispatcherUnhandledException: System.ObjectDisposedException: Доступ к ликвидированному объекту невозможен.
+Имя объекта: "System.Net.HttpListener".
+   в System.Net.HttpListener.CheckDisposed()
+   в System.Net.HttpListener.Stop()
+   в TwoRatChat.Main.MainWindow.Window_Closed(Object sender, EventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 217
+   в System.Windows.Window.OnClosed(EventArgs e)
+   в System.Windows.Window.WmDestroy()
+   в System.Windows.Window.WindowFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в System.Windows.Interop.HwndSource.PublicHooksFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+[!] 14.18:35:39 CurrentDomain_UnhandledException: System.ObjectDisposedException: Доступ к ликвидированному объекту невозможен.
+Имя объекта: "System.Net.HttpListener".
+   в System.Net.HttpListener.CheckDisposed()
+   в System.Net.HttpListener.Stop()
+   в TwoRatChat.Main.MainWindow.Window_Closed(Object sender, EventArgs e) в X:\NewSources\TwoRatChat\TwoRatChat.Main\MainWindow.xaml.cs:строка 217
+   в System.Windows.Window.OnClosed(EventArgs e)
+   в System.Windows.Window.WmDestroy()
+   в System.Windows.Window.WindowFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в System.Windows.Interop.HwndSource.PublicHooksFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   в MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   в System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   в System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   в System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   в MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+[ ] 14.18:36:14 TwoRatChat started. Version: 3.8.6588.33234
+[ ] 14.18:36:15 CommandFactory loaded
+[W] 14.18:36:16 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:38:21 TwoRatChat started. Version: 3.8.6588.33234
+[ ] 14.18:38:23 CommandFactory loaded
+[W] 14.18:38:24 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:38:43 TwoRatChat started. Version: 3.8.6588.33234
+[ ] 14.18:38:45 CommandFactory loaded
+[W] 14.18:38:46 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:40:01 TwoRatChat started. Version: 3.8.6588.33234
+[ ] 14.18:40:02 CommandFactory loaded
+[W] 14.18:40:03 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:42:54 TwoRatChat started. Version: 3.8.6588.33234
+[ ] 14.18:42:55 CommandFactory loaded
+[W] 14.18:42:56 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:46:49 TwoRatChat started. Version: 3.8.6588.33803
+[ ] 14.18:46:51 CommandFactory loaded
+[W] 14.18:46:51 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:48:32 TwoRatChat started. Version: 3.8.6588.33855
+[ ] 14.18:48:35 CommandFactory loaded
+[W] 14.18:48:36 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:49:57 TwoRatChat started. Version: 3.8.6588.33898
+[ ] 14.18:49:59 CommandFactory loaded
+[W] 14.18:49:59 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:56:39 TwoRatChat started. Version: 3.8.6588.34098
+[ ] 14.18:56:41 CommandFactory loaded
+[W] 14.18:56:41 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:59:12 TwoRatChat started. Version: 3.8.6588.34175
+[ ] 14.18:59:14 CommandFactory loaded
+[W] 14.18:59:15 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.18:59:36 TwoRatChat started. Version: 3.8.6588.34175
+[ ] 14.18:59:38 CommandFactory loaded
+[W] 14.18:59:39 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.19:04:29 TwoRatChat started. Version: 3.8.6588.34334
+[ ] 14.19:04:31 CommandFactory loaded
+[W] 14.19:04:32 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.19:04:50 TwoRatChat started. Version: 3.8.6588.34344
+[ ] 14.19:04:53 CommandFactory loaded
+[W] 14.19:04:53 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.19:11:01 TwoRatChat started. Version: 3.8.6588.34530
+[ ] 14.19:11:05 CommandFactory loaded
+[W] 14.19:11:05 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.19:12:14 TwoRatChat started. Version: 3.8.6588.34530
+[ ] 14.19:12:15 CommandFactory loaded
+[W] 14.19:12:16 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.19:14:06 TwoRatChat started. Version: 3.8.6588.34530
+[ ] 14.19:14:07 CommandFactory loaded
+[W] 14.19:14:08 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.19:16:14 TwoRatChat started. Version: 3.8.6588.34530
+[ ] 14.19:16:23 CommandFactory loaded
+[W] 14.19:16:23 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.19:25:01 TwoRatChat started. Version: 3.8.6588.34530
+[ ] 14.19:25:03 CommandFactory loaded
+[W] 14.19:25:03 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 14.21:13:28 TwoRatChat started. Version: 3.8.6588.34530
+[ ] 14.21:13:30 CommandFactory loaded
+[W] 14.21:13:32 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 15.09:40:53 TwoRatChat started. Version: 3.8.6588.34530
+[ ] 15.09:40:54 CommandFactory loaded
+[W] 15.09:40:55 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 16.19:20:40 TwoRatChat started. Version: 3.8.6588.34530
+[ ] 16.19:20:43 CommandFactory loaded
+[W] 16.19:20:44 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 17.10:27:10 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 17.10:27:11 CommandFactory loaded
+[W] 17.10:27:12 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 17.18:16:50 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 17.18:16:51 CommandFactory loaded
+[W] 17.18:16:52 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 17.19:02:19 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 17.19:02:20 CommandFactory loaded
+[W] 17.19:02:21 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 17.19:05:31 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 17.19:05:33 CommandFactory loaded
+[W] 17.19:05:34 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 20.21:47:00 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 20.21:47:01 CommandFactory loaded
+[W] 20.21:47:02 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 25.23:44:07 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 25.23:44:09 CommandFactory loaded
+[W] 25.23:44:10 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 26.09:23:03 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 26.09:23:06 CommandFactory loaded
+[W] 26.09:23:06 WEBCORE[ConsoleMessage]: 133. stared
+[!] 26.10:57:17 Goodgame exception: #0
+[!] 26.10:57:38 Goodgame exception: #2 System.Net.Sockets.SocketException (0x80004005): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+[ ] 26.18:13:01 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 26.18:13:03 CommandFactory loaded
+[W] 26.18:13:03 WEBCORE[ConsoleMessage]: 133. stared
+[!] 26.20:57:00 Goodgame exception: #2 System.Net.Sockets.SocketException (0x80004005): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+[ ] 26.20:58:36 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 26.20:58:38 CommandFactory loaded
+[W] 26.20:58:38 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 27.11:19:18 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 27.11:19:20 CommandFactory loaded
+[W] 27.11:19:21 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 27.19:26:10 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 27.19:26:13 CommandFactory loaded
+[W] 27.19:26:14 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 28.09:58:47 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 28.09:58:49 CommandFactory loaded
+[W] 28.09:58:50 WEBCORE[ConsoleMessage]: 133. stared
+[!] 28.10:57:31 Goodgame exception: #0
+[!] 28.10:57:52 Goodgame exception: #2 System.Net.Sockets.SocketException (0x80004005): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+[ ] 29.18:53:55 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 29.18:53:57 CommandFactory loaded
+[W] 29.18:53:58 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 29.19:17:32 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 29.19:17:34 CommandFactory loaded
+[W] 29.19:17:34 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 29.19:19:23 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 29.19:19:25 CommandFactory loaded
+[W] 29.19:19:25 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 29.22:29:41 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 29.22:29:43 CommandFactory loaded
+[W] 29.22:29:43 WEBCORE[ConsoleMessage]: 133. stared
+[W] 29.22:30:16 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 29.22:31:38 TwoRatChat started. Version: 3.9.6591.18801
+[ ] 29.22:31:40 CommandFactory loaded
+[W] 29.22:31:40 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 29.23:33:30 TwoRatChat started. Version: 3.10.6603.42400
+[ ] 29.23:33:31 CommandFactory loaded
+[W] 29.23:33:32 WEBCORE[ConsoleMessage]: 133. stared
+[W] 29.23:33:42 WEBCORE[ConsoleMessage]: 133. stared
+[W] 29.23:34:23 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 29.23:35:41 TwoRatChat started. Version: 3.10.6603.42461
+[ ] 29.23:35:43 CommandFactory loaded
+[W] 29.23:35:43 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 04.02:48:59 TwoRatChat started. Version: 3.11.6664.28595
+[ ] 04.02:49:10 CommandFactory loaded
+[W] 04.02:49:12 WEBCORE[ConsoleMessage]: 133. stared
+[ ] 04.02:53:06 TwoRatChat started. Version: 3.11.6664.28595
+[ ] 04.02:53:07 CommandFactory loaded
+[W] 04.02:53:08 WEBCORE[ConsoleMessage]: 133. stared

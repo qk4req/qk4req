@@ -9,5 +9,5 @@ return [
 		list($key, $alg) = array_values(App::get('jwt'));
 		return new JWT($key, $alg);
 	},
-	Assetter::class => \DI\autowire()->constructor(ASSETS_DIR, '.assets', 9122)->method('registerNamespace', '{ROOT}', '/assets')
+	Assetter::class => \DI\autowire()->constructor(ASSETS_DIR, '.assets', 71232322)->method('registerNamespace', '{ROOT}', '/assets')
 ];

@@ -24,6 +24,7 @@
         "lancerhe/php-crypt": "^1.1",
         "symfony/validator": "^5.1",
         "symfony/serializer": "^5.1",
-        "symfony/property-access": "^5.1"
+        "symfony/property-access": "^5.1",
+        "nesbot/carbon": "^2.39"
     }
 }

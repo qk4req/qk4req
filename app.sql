@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Хост:                         127.0.0.1
--- Версия сервера:               5.7.20 - MySQL Community Server (GPL)
+-- Версия сервера:               8.0.19 - MySQL Community Server - GPL
 -- Операционная система:         Win64
--- HeidiSQL Версия:              10.1.0.5464
+-- HeidiSQL Версия:              11.0.0.5958
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -12,44 +12,44 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Дамп структуры базы данных app
-DROP DATABASE IF EXISTS `app`;
-CREATE DATABASE IF NOT EXISTS `app` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `app`;
+-- Дамп структуры базы данных qk4req
+DROP DATABASE IF EXISTS `qk4req`;
+CREATE DATABASE IF NOT EXISTS `qk4req` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `qk4req`;
 
--- Дамп структуры для таблица app.admins
+-- Дамп структуры для таблица qk4req.admins
 DROP TABLE IF EXISTS `admins`;
 CREATE TABLE IF NOT EXISTS `admins` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `signature` varchar(50) NOT NULL,
-  `level` int(2) NOT NULL,
+  `level` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `signature` (`signature`),
   KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.admins: ~1 rows (приблизительно)
+-- Дамп данных таблицы qk4req.admins: ~0 rows (приблизительно)
 DELETE FROM `admins`;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
 INSERT INTO `admins` (`id`, `name`, `signature`, `level`) VALUES
 	(1, 'qk4req', '124b55b62fab6b195b7e52ff96b31baf', 100);
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.challenges
+-- Дамп структуры для таблица qk4req.challenges
 DROP TABLE IF EXISTS `challenges`;
 CREATE TABLE IF NOT EXISTS `challenges` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
   `description` varchar(1000) NOT NULL,
   `link` varchar(500) DEFAULT NULL,
-  `start` int(11) NOT NULL,
-  `end` int(11) NOT NULL,
+  `start` int NOT NULL,
+  `end` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.challenges: ~2 rows (приблизительно)
+-- Дамп данных таблицы qk4req.challenges: ~2 rows (приблизительно)
 DELETE FROM `challenges`;
 /*!40000 ALTER TABLE `challenges` DISABLE KEYS */;
 INSERT INTO `challenges` (`id`, `title`, `description`, `link`, `start`, `end`) VALUES
@@ -57,125 +57,101 @@ INSERT INTO `challenges` (`id`, `title`, `description`, `link`, `start`, `end`) 
 	(2, 'Корч "Шкуровозка"', 'Мне нужно построить корч-проект "Шкуровозка".', 'https://vk.com/topic-178832593_40083945?post=14', 1550330065, 1585866065);
 /*!40000 ALTER TABLE `challenges` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.donations
+-- Дамп структуры для таблица qk4req.donations
 DROP TABLE IF EXISTS `donations`;
 CREATE TABLE IF NOT EXISTS `donations` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `notification_id` int(11) NOT NULL,
-  `name` char(50) NOT NULL,
-  `amount` float(11,2) unsigned NOT NULL,
-  `currency` varchar(3) NOT NULL DEFAULT 'RUB',
-  `comment` varchar(1000) DEFAULT NULL,
-  `created_at` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `notification_id` int DEFAULT NULL,
+  `from` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `easter_egg_id` int DEFAULT NULL,
+  `amount` float(11,2) unsigned DEFAULT NULL,
+  `original_amount` float(11,4) unsigned NOT NULL,
+  `original_currency` char(3) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `comment` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `platform` enum('da','donationalerts','sl','streamlabs') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK1` (`notification_id`),
+  KEY `FK2` (`easter_egg_id`),
+  CONSTRAINT `FK_to_easter_eggs1` FOREIGN KEY (`easter_egg_id`) REFERENCES `easter_eggs` (`id`),
   CONSTRAINT `FK_to_notification1` FOREIGN KEY (`notification_id`) REFERENCES `notifications` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5844932 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.donations: ~22 rows (приблизительно)
+-- Дамп данных таблицы qk4req.donations: ~5 rows (приблизительно)
 DELETE FROM `donations`;
 /*!40000 ALTER TABLE `donations` DISABLE KEYS */;
-INSERT INTO `donations` (`id`, `notification_id`, `name`, `amount`, `currency`, `comment`, `created_at`) VALUES
-	(1, 5, 'asdasdas', 3000.00, 'RUB', 'завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали ', 1544175944),
-	(4885288, 4, 'Аноним', 123.00, 'RUB', '123', 1544176064),
-	(4897205, 4, 'Аноним', 123.33, 'RUB', '3', 1544268106),
-	(4897206, 5, 'asdasdas4', 1000.00, 'RUB', '123', 1544181660),
-	(4897210, 4, 'Аноним4', 123.00, 'RUB', '123', 1542210420),
-	(4907663, 4, 'Аноним', 123.81, 'RUB', '123', 1544353507),
-	(4983349, 4, 'Аноним2', 123.00, 'RUB', 'завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали ', 1544969794),
-	(5253952, 5, 'Аноним1', 123.00, 'RUB', '123', 1546967120),
-	(5420873, 4, 'test', 123.00, 'RUB', '123', 1548073027),
-	(5420893, 4, '1', 123.00, 'RUB', '123', 1548073020),
-	(5571490, 4, 'Аноним', 123.00, 'RUB', 'ЭТО ТЕСТ!', 1556467020),
-	(5844921, 4, 'Аноним', 100.00, 'RUB', 'НА ТЕБЕ ПО ИПАЛУ!', 1551257643),
-	(5844922, 5, 'ЕБАЛО', 3000.00, 'RUB', 'завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали ', 1544175944),
-	(5844923, 5, 'ЕБАЛО1', 3000.00, 'RUB', 'завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали ', 1544175944),
-	(5844924, 5, 'ЕБАЛО2', 3000.00, 'RUB', 'завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали ', 1544175944),
-	(5844925, 5, 'ЕБАЛО455', 3000.00, 'RUB', 'завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали завали ', 1556467020),
-	(5844926, 4, 'John', 66.00, 'RUB', 'This is a test donation for RUB66.00.', 1560354129),
-	(5844927, 4, 'John', 6.00, 'RUB', 'This is a test donation for RUB6.00.', 1560354163),
-	(5844928, 4, 'John', 86.00, 'RUB', 'This is a test donation for RUB86.00.', 1560354252),
-	(5844929, 4, 'John', 76.00, 'RUB', 'This is a test donation for RUB76.00.', 1560869199),
-	(5844930, 4, 'John', 14.00, 'RUB', 'This is a test donation for RUB14.00.', 1563042718),
-	(5844931, 5, 'asdasd', 11111.00, 'RUB', 'asdasd', 1576342436);
+INSERT INTO `donations` (`id`, `notification_id`, `from`, `easter_egg_id`, `amount`, `original_amount`, `original_currency`, `comment`, `created_at`, `platform`) VALUES
+	(3, NULL, '123123', 2, 246925.97, 246925.9688, 'RUB', '3213233', '2020-08-29 18:21:08', 'streamlabs'),
+	(4, NULL, '1231233', 2, 2444.81, 2444.8115, 'RUB', '3333', '2020-08-29 18:23:57', 'streamlabs'),
+	(5, NULL, 'asdasdasdasda', 2, 9112.48, 9112.4795, 'RUB', 'sdasdasdasd', '2020-08-29 18:29:48', 'streamlabs'),
+	(6, NULL, 'asdasdasd123123', 2, 9121592.00, 9121592.0000, 'RUB', 'asdasd', '2020-08-29 18:30:14', 'streamlabs'),
+	(7, NULL, 'zxczxc', 2, 913692.75, 913692.7500, 'RUB', 'asdasd', '2020-08-29 18:31:20', 'streamlabs');
 /*!40000 ALTER TABLE `donations` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.easter_eggs
+-- Дамп структуры для таблица qk4req.easter_eggs
 DROP TABLE IF EXISTS `easter_eggs`;
 CREATE TABLE IF NOT EXISTS `easter_eggs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `notification_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `expression` varchar(10) NOT NULL,
   `value` float(11,2) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `notification_id` (`notification_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `src` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `volume` float(12,0) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.easter_eggs: ~1 rows (приблизительно)
+-- Дамп данных таблицы qk4req.easter_eggs: ~0 rows (приблизительно)
 DELETE FROM `easter_eggs`;
 /*!40000 ALTER TABLE `easter_eggs` DISABLE KEYS */;
-INSERT INTO `easter_eggs` (`id`, `notification_id`, `expression`, `value`) VALUES
-	(1, 0, '>=', 1000.00);
+INSERT INTO `easter_eggs` (`id`, `expression`, `value`, `src`, `volume`) VALUES
+	(2, '>=', 1000.00, '/assets/media', 0);
 /*!40000 ALTER TABLE `easter_eggs` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.followers
+-- Дамп структуры для таблица qk4req.followers
 DROP TABLE IF EXISTS `followers`;
 CREATE TABLE IF NOT EXISTS `followers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `notification_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `notification_id` int NOT NULL,
   `name` varchar(50) NOT NULL,
-  `created_at` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK1` (`notification_id`),
   CONSTRAINT `FK_to_notification2` FOREIGN KEY (`notification_id`) REFERENCES `notifications` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.followers: ~7 rows (приблизительно)
+-- Дамп данных таблицы qk4req.followers: ~0 rows (приблизительно)
 DELETE FROM `followers`;
 /*!40000 ALTER TABLE `followers` DISABLE KEYS */;
-INSERT INTO `followers` (`id`, `notification_id`, `name`, `created_at`) VALUES
-	(1, 6, 'qk4req', 1560354207),
-	(2, 6, 'qk4req', 1560354246),
-	(3, 6, 'qk4req', 1560869194),
-	(4, 6, 'qk4req', 1563043106),
-	(5, 6, 'qk4req', 1563043140),
-	(6, 6, 'qk4req', 1563043178),
-	(7, 6, 'qk4req', 1576341972);
 /*!40000 ALTER TABLE `followers` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.notifications
+-- Дамп структуры для таблица qk4req.notifications
 DROP TABLE IF EXISTS `notifications`;
 CREATE TABLE IF NOT EXISTS `notifications` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `easter_egg_id` int(11) DEFAULT NULL,
-  `type` enum('donation','follower','subscription','easter_egg','progress_bar') NOT NULL,
-  `volume` float unsigned NOT NULL DEFAULT '1',
-  `src` varchar(1000) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `type` enum('donation','follower','subscription','progress_bar') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `src` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `volume` float(12,0) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `type` (`type`),
-  KEY `FK1` (`easter_egg_id`),
-  CONSTRAINT `FK_to_easter_egg` FOREIGN KEY (`easter_egg_id`) REFERENCES `easter_eggs` (`id`)
+  UNIQUE KEY `type` (`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.notifications: ~5 rows (приблизительно)
+-- Дамп данных таблицы qk4req.notifications: ~4 rows (приблизительно)
 DELETE FROM `notifications`;
 /*!40000 ALTER TABLE `notifications` DISABLE KEYS */;
-INSERT INTO `notifications` (`id`, `easter_egg_id`, `type`, `volume`, `src`) VALUES
-	(4, NULL, 'donation', 1, '/assets/media/notifications/donation.mp3'),
-	(5, 1, 'easter_egg', 1, '/assets/media/notifications/easter_eggs/dimooon.mp3'),
-	(6, NULL, 'follower', 1, '/assets/media/notifications/follower.mp3'),
-	(7, NULL, 'subscription', 1, '/assets/media/notifications/subscription.mp3'),
-	(8, NULL, 'progress_bar', 1, '/assets/media/notifications/progress_bar.mp3');
+INSERT INTO `notifications` (`id`, `type`, `src`, `volume`) VALUES
+	(4, 'donation', '/assets/themes/master/media/notifications/donation.mp3', 1),
+	(6, 'follower', '/assets/themes/master/media/notifications/follower.mp3', 1),
+	(7, 'subscription', '/assets/themes/master/media/notifications/subscription.mp3', 1),
+	(8, 'progress_bar', '/assets/themes/master/media/notifications/progress_bar.mp3', 1);
 /*!40000 ALTER TABLE `notifications` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.progress_bar_levels
+-- Дамп структуры для таблица qk4req.progress_bar_levels
 DROP TABLE IF EXISTS `progress_bar_levels`;
 CREATE TABLE IF NOT EXISTS `progress_bar_levels` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `session_id` int(11) NOT NULL,
-  `notification_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `session_id` int NOT NULL,
+  `notification_id` int NOT NULL,
   `title` varchar(50) NOT NULL DEFAULT '0',
-  `points` int(11) NOT NULL,
+  `points` int NOT NULL,
   `color` varchar(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `notification_id` (`notification_id`),
@@ -184,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `progress_bar_levels` (
   CONSTRAINT `FK_to_session1` FOREIGN KEY (`session_id`) REFERENCES `sessions` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.progress_bar_levels: ~5 rows (приблизительно)
+-- Дамп данных таблицы qk4req.progress_bar_levels: ~5 rows (приблизительно)
 DELETE FROM `progress_bar_levels`;
 /*!40000 ALTER TABLE `progress_bar_levels` DISABLE KEYS */;
 INSERT INTO `progress_bar_levels` (`id`, `session_id`, `notification_id`, `title`, `points`, `color`) VALUES
@@ -195,68 +171,62 @@ INSERT INTO `progress_bar_levels` (`id`, `session_id`, `notification_id`, `title
 	(5, 1, 8, '100%', 20000, '#f63a0f');
 /*!40000 ALTER TABLE `progress_bar_levels` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.progress_bar_points
+-- Дамп структуры для таблица qk4req.progress_bar_points
 DROP TABLE IF EXISTS `progress_bar_points`;
 CREATE TABLE IF NOT EXISTS `progress_bar_points` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `session_id` int(11) NOT NULL,
-  `amount` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `session_id` int NOT NULL,
+  `amount` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `session_id` (`session_id`),
   CONSTRAINT `FK_to_session2` FOREIGN KEY (`session_id`) REFERENCES `sessions` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.progress_bar_points: ~0 rows (приблизительно)
+-- Дамп данных таблицы qk4req.progress_bar_points: ~0 rows (приблизительно)
 DELETE FROM `progress_bar_points`;
 /*!40000 ALTER TABLE `progress_bar_points` DISABLE KEYS */;
 /*!40000 ALTER TABLE `progress_bar_points` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.sessions
+-- Дамп структуры для таблица qk4req.sessions
 DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE IF NOT EXISTS `sessions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `start` int(11) NOT NULL,
-  `end` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `start` int NOT NULL,
+  `end` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.sessions: ~1 rows (приблизительно)
+-- Дамп данных таблицы qk4req.sessions: ~0 rows (приблизительно)
 DELETE FROM `sessions`;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
 INSERT INTO `sessions` (`id`, `start`, `end`) VALUES
 	(1, 1400939566, 0);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.subscriptions
+-- Дамп структуры для таблица qk4req.subscriptions
 DROP TABLE IF EXISTS `subscriptions`;
 CREATE TABLE IF NOT EXISTS `subscriptions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `notification_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `notification_id` int NOT NULL,
   `name` varchar(50) NOT NULL,
-  `months` int(11) NOT NULL DEFAULT '1',
-  `created_at` int(11) NOT NULL,
+  `months` int NOT NULL DEFAULT '1',
+  `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK1` (`notification_id`),
   CONSTRAINT `FK_to_notification3` FOREIGN KEY (`notification_id`) REFERENCES `notifications` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.subscriptions: ~5 rows (приблизительно)
+-- Дамп данных таблицы qk4req.subscriptions: ~0 rows (приблизительно)
 DELETE FROM `subscriptions`;
 /*!40000 ALTER TABLE `subscriptions` DISABLE KEYS */;
-INSERT INTO `subscriptions` (`id`, `notification_id`, `name`, `months`, `created_at`) VALUES
-	(1, 7, 'qk4req', 1, 1560354222),
-	(2, 7, 'qk4req', 1, 1560869200),
-	(3, 7, 'qk4req', 1, 1563043008),
-	(4, 7, 'qk4req', 1, 1563043201),
-	(5, 7, 'qk4req', 1, 1576341975);
 /*!40000 ALTER TABLE `subscriptions` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.vote
+-- Дамп структуры для таблица qk4req.vote
 DROP TABLE IF EXISTS `vote`;
 CREATE TABLE IF NOT EXISTS `vote` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `voting_id` int(11) NOT NULL,
-  `voting_point_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `voting_id` int NOT NULL,
+  `voting_point_id` int NOT NULL,
   `signature` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK1` (`voting_point_id`),
@@ -265,7 +235,7 @@ CREATE TABLE IF NOT EXISTS `vote` (
   CONSTRAINT `FK_to_voting_point` FOREIGN KEY (`voting_point_id`) REFERENCES `voting_points` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.vote: ~2 rows (приблизительно)
+-- Дамп данных таблицы qk4req.vote: ~2 rows (приблизительно)
 DELETE FROM `vote`;
 /*!40000 ALTER TABLE `vote` DISABLE KEYS */;
 INSERT INTO `vote` (`id`, `voting_id`, `voting_point_id`, `signature`) VALUES
@@ -273,18 +243,18 @@ INSERT INTO `vote` (`id`, `voting_id`, `voting_point_id`, `signature`) VALUES
 	(50, 2, 10, '202cb962ac59075b964b07152d234b70');
 /*!40000 ALTER TABLE `vote` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.votings
+-- Дамп структуры для таблица qk4req.votings
 DROP TABLE IF EXISTS `votings`;
 CREATE TABLE IF NOT EXISTS `votings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
-  `start` int(11) NOT NULL,
-  `end` int(11) NOT NULL,
+  `start` int NOT NULL,
+  `end` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.votings: ~2 rows (приблизительно)
+-- Дамп данных таблицы qk4req.votings: ~0 rows (приблизительно)
 DELETE FROM `votings`;
 /*!40000 ALTER TABLE `votings` DISABLE KEYS */;
 INSERT INTO `votings` (`id`, `title`, `start`, `end`) VALUES
@@ -292,11 +262,11 @@ INSERT INTO `votings` (`id`, `title`, `start`, `end`) VALUES
 	(3, '100%', 1547920212, 1647120212);
 /*!40000 ALTER TABLE `votings` ENABLE KEYS */;
 
--- Дамп структуры для таблица app.voting_points
+-- Дамп структуры для таблица qk4req.voting_points
 DROP TABLE IF EXISTS `voting_points`;
 CREATE TABLE IF NOT EXISTS `voting_points` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `voting_id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `voting_id` int NOT NULL,
   `title` varchar(50) NOT NULL,
   `background_color` varchar(50) NOT NULL,
   `border_color` varchar(50) NOT NULL,
@@ -305,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `voting_points` (
   CONSTRAINT `FK_to_voting2` FOREIGN KEY (`voting_id`) REFERENCES `votings` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы app.voting_points: ~8 rows (приблизительно)
+-- Дамп данных таблицы qk4req.voting_points: ~0 rows (приблизительно)
 DELETE FROM `voting_points`;
 /*!40000 ALTER TABLE `voting_points` DISABLE KEYS */;
 INSERT INTO `voting_points` (`id`, `voting_id`, `title`, `background_color`, `border_color`) VALUES

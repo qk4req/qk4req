@@ -23,7 +23,7 @@ class Entity
 	/** 
 	 * @ORM\Column(type="string") 
 	 */
-	protected $name;
+	protected $from;
 	/** 
 	 * @ORM\Column(type="integer") 
 	 */
@@ -31,13 +31,13 @@ class Entity
 	/** 
 	 * @ORM\Column(type="string") 
 	 */
-	protected $currency;
+	protected $original_currency;
 	/** 
 	 * @ORM\Column(type="string") 
 	 */
 	protected $comment;
 	/** 
-	 * @ORM\Column(type="integer") 
+	 * @ORM\Column(type="datetime") 
 	 */
 	protected $created_at;
 
@@ -46,14 +46,14 @@ class Entity
 		return $this->id;
 	}
 
-	public function getName()
+	public function getFrom()
 	{
-		return $this->name;
+		return $this->from;
 	}
 
-	public function setName($name)
+	public function setFrom($name)
 	{
-		$this->name = $name;
+		$this->from = $name;
 		return $this;
 	}
 
@@ -62,9 +62,9 @@ class Entity
 		return $this->amount;
 	}
 
-	public function getCurrency()
+	public function getOriginalCurrency()
 	{
-		return $this->currency;
+		return $this->original_currency;
 	}
 
 	public function getCreatedAt()

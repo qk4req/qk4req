@@ -1,5 +1,10 @@
 <?php
 use Doctrine\ORM;
+use Doctrine\DBAL\Types\Type;
+use Extensions\Doctrine\DBAL\Types\UTCDateTimeType;
+
+Type::overrideType('datetime', UTCDateTimeType::class);
+Type::overrideType('datetimetz', UTCDateTimeType::class);
 
 return [
 	ORM\EntityManager::class => function() {

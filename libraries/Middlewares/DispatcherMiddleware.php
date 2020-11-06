@@ -47,12 +47,12 @@ class DispatcherMiddleware implements MiddlewareInterface
 
 		$action = is_string($action) ? [$action, '__invoke'] : $action;
 
-		$acceptHeader = strtolower($request->getHeader('Accept')[0]);
+		//$acceptHeader = strtolower($request->getHeader('Accept')[0]);
 
-		if (in_array($acceptHeader, $this->restHeaders)) {
-			$method = strtoupper(\Laminas\Diactoros\marshalMethodFromSapi($request->getServerParams()));
-			$action[1] = $this->methodMap[$method];
-		}
+		//if (in_array($acceptHeader, $this->restHeaders)) {
+		//	$method = strtoupper(\Laminas\Diactoros\marshalMethodFromSapi($request->getServerParams()));
+		//	$action[1] = $this->restMethodMap[$method];
+		//}
 
 		$response = $handler->handle($request);
 

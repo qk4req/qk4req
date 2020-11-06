@@ -36,8 +36,8 @@
 		{
 			"name": "animate.css",
 			"files": {
-				"js": [
-					"jquery/dist/jquery.min.js"
+				"css": [
+					"animate.css/animate.min.css"
 				]
 			}
 		},
@@ -142,6 +142,39 @@
 			"files": {
 				"js": [
 					"socket.io-client/dist/socket.io.js"
+				]
+			}
+		},
+		{
+			"name": "soundmanager2",
+			"files": {
+				"js": [
+					"soundmanager2/script/soundmanager2-jsmin.js"
+				]
+			}
+		},
+		{
+			"name": "moment",
+			"files": {
+				"js": [
+					"moment/min/moment-with-locales.min.js"
+				]
+			}
+		},
+		{
+			"name": "qs",
+			"files": {
+				"js": [
+					"qs/dist/qs.js"
+				]
+			}
+		},
+		{
+			"name": "cryptojs",
+			"files": {
+				"js": [
+					"crypto-js/crypto-js.js",
+					"crypto-js/md5.js"
 				]
 			}
 		}

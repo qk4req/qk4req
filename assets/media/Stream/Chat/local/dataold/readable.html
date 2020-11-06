@@ -1,0 +1,363 @@
+<html>
+<!--%SAVEBEGIN%tworat.trct|id=sexName,value=#FFEDD81D|id=sexSys,value=#FFE9262D|id=sexText,value=#FFFFFEFF|id=sexTm,value=#FFEC9D1C|id=sexTssem,value=#FF00EE00|id=sexMesBack,value=#88FFFFFF|id=sexMesshadow,value=text-shadow: 0 1px 1px black;|id=sexmatop,value=margin-top: 2px;|id=fontsdfxxs33d,value=Arial,size=14|id=dfeeач32s111,ext1=,img1=,t1=0,t2=0,t3=0,t4=0,ext2=,img2=|id=dfц2ee32ssd33ч444,top=32,left=32,right=32,bottom=32|id=sexMesBackTM,value=#88FFFFFF|id=sexMesshadowtm,value=text-shadow: 0 1px 1px black;|id=sexmatoptm,value=margin-top: 2px;|id=fontsdf33sd,value=Arial,size=14|id=dfц3ee32s333,ext1=,img1=,t1=0,t2=0,t3=0,t4=0,ext2=,img2=|id=dfц2ee32ssd3444,top=32,left=32,right=32,bottom=32|id=sexMesBackSys,value=#FFFFFFFF|id=sexMesshadowSys,value=text-shadow: 0 1px 1px black;|id=sexmatopsys,value=|id=fonts45dfsd,value=Impact,size=10|id=dfцчee32s444,ext1=,img1=,t1=0,t2=0,t3=0,t4=0,ext2=,img2=|id=dfцчee32ssd3444,top=32,left=32,right=32,bottom=32|id=animShow,value=bounceIn|%SAVEEND%-->
+<!--%NAME=TwoRatChat default template%-->
+<!--%EXT=HTML%-->
+<!--%DESC=Шаблон для чата, который занимает всю область.%-->
+<head>
+<script src="asset://rat/js/jquery.js"></script>
+<script src="asset://rat/varsi.js"></script>
+<link rel="stylesheet" href="asset://rat/css/animate.min.css">
+<script src="/js/jquery.js"></script>
+<script src="/vars.js"></script>
+<link rel="stylesheet" href="/css/animate.min.css">
+
+<style type="text/css">
+::-webkit-scrollbar {
+	visibility: hidden;
+}
+html, body {
+    background-color: rgba(255,255,255,0.0);
+    opacity: 0.99;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-size: 20;
+}
+#root{
+	/*margin: -50px 30px 0px 0px;*/
+    height: 100%;
+    overflow:hidden;
+    z-index:-1; /* Remove this line if it's not going to be a background! */
+    /*-webkit-transform: rotateY(-10deg);*/
+}
+
+#back3d{
+    padding: 0px;
+   /* -webkit-perspective: 400px; /* Chrome, Safari, Opera  */
+}
+
+/*Контейнер чата*/
+.container{
+	overflow: hidden;
+	position: fixed;
+	width: 90%;
+}
+
+/*Подстветка имени*/
+.message_name{
+    display: inline-block;
+    position: relative;
+    color: #EDD81D;
+    margin-right: 5px;
+}
+
+.message_source{
+	margin-right: 2px;
+}
+
+/*Подсветка системного*/
+.message_textsys{
+    display: inline-block;
+    position: relative;
+    color: #E9262D;
+    margin-right: 5px;
+}
+
+/*Текст*/
+.message_text{
+    position: relative;
+    color: #FFFEFF;
+}
+
+/*Текст для стримера*/
+.message_texttm{
+	color: #EC9D1C;
+}
+
+/*Ссылка*/
+.message_link{
+	color:#00EE00;
+}
+
+.message_badge{
+	margin-right: 1px;
+	width: 16px;
+	height: 16px;
+}
+
+
+/*Сообщение*/
+.message{
+	height: auto;
+	background-color: rgba( 255, 255, 255, 0.5333334 );
+text-shadow: 0 1px 1px black;
+margin-top: 2px;
+font-family: 'Arial'; font-size: 14pt;
+
+}
+
+.message-content{
+margin: margin: 32px 32px 32px 32px;
+}
+
+/*Сообщение для стримера*/
+.messagetm{
+	height: auto;
+	background-color:  rgba( 255, 255, 255, 0.5333334 );	
+text-shadow: 0 1px 1px black;
+margin-top: 2px;
+font-family: 'Arial'; font-size: 14pt;
+
+}
+
+.messagetm-content{
+margin: margin: 32px 32px 32px 32px;
+}
+
+/*Сообщение системное*/
+.messagesys{
+	height: auto;
+    background-color:  rgba( 255, 255, 255, 1 );   
+text-shadow: 0 1px 1px black;
+
+font-family: 'Impact'; font-size: 10pt;
+
+}
+
+.messagesys-content{
+margin: 32px 32px 32px 32px;
+}
+
+
+</style>
+<script>
+var ggbg = /\[sml\]file.*?www\\(.*?).png\[\/sml\]/g;
+var smlr = /\[sml\](.*?)\[\/sml\]/g;
+var urlr = /\[url\](.*?)\[\/url\]/g;
+var br = /\[b\](.*?)\[\/b\]/g;
+var remainMessages = 30;
+var chats = {
+    delMe: [],
+    oldMes: {}
+};
+var _animShow = "bounceIn";
+var _animHide = "fadeOutRight";
+var _boolAllowHide = 0;
+var _topHideY = 0;
+
+
+var _showImages = 0;
+var _showSmiles = 1;
+var _showMode = 0;
+
+
+function extractDomain(url) {
+    try{
+        var domain;
+        if (url.indexOf("://") > -1) {
+            domain = url.split('/')[2];
+        }
+        else {
+            domain = url.split('/')[0];
+        }
+        domain = domain.split(':')[0];
+        return domain;
+    }catch( err ){
+        return url;
+    }
+};
+
+function isOffscreen(el) {
+    try{
+        if( _boolAllowHide )
+            return el.offset().top < _topHideY;
+        return (el.offset().top + el.height()) < _topHideY;
+    }catch( err ){
+        return true;
+    }
+};
+
+function onUrl(url){
+    if( url.indexOf("http://") == 0 )
+        return url;
+    return _rootAsset + url;
+}
+
+function insertSmiles(text) {
+    var oldText;
+
+    var j = 10;
+
+   // do {
+    //    oldText = text;
+        if (_showSmiles)
+            text = text
+				.replace(ggbg, "<img src='$1.png' class='message_smile' />") // BUGFIX :((
+				.replace(smlr, "<img src='$1' class='message_smile' />")
+        ;
+
+        text = text
+			.replace(br, "<b>$1</b>")
+			.replace(urlr, function (lnk) {
+			    return "<a href='" + lnk + "'>" + extractDomain(lnk) + "</a>";
+			});
+
+        if (_showImages)
+            text = text
+				.replace(urlr, "<img src='$1' class='message_img' />");
+
+      //  if( (--j) < 0 ){
+      //      text += "LOCK DETECTED!";
+      //      break;
+     //   }
+ //   } while (oldText != text)
+
+    return text;
+}
+
+function createMessage(mes) {
+    var s = '';
+    if (mes.source !== undefined && mes.source !== null ) {
+        s = "<img src='"+_rootAsset+"img/" + mes.source + ".png' class='message_source' />";
+    };
+	
+	/*if( mes.icon !== undefined ){
+        s += "<img src='" + mes.icon + "' class='message_icon' />";
+	}*/
+
+    if( mes.badges !== undefined && mes.badges.length > 0 ){
+        for( var b=0; b<mes.badges.length; ++b ){
+            s += "<img class='message_badge' src='" + onUrl(mes.badges[b]) + "' />";
+        }
+    }
+
+    var mclass = "message";
+
+    if( mes.color === undefined || mes.color == "" ){
+
+    }else{
+        mes.name = "<font color='" + mes.color + "'>" + mes.name + "</font>";
+    }
+
+    if (mes.source === undefined) {
+        mclass = "messagesys";
+        s += "<span class='message_textsys'>" + insertSmiles(mes.text);
+    } else {
+        if (mes.tome == 'True'){
+            mclass = "messagetm";
+            s += "<span class='message_name'>" + mes.name +
+		         ": </span><span class='message_texttm'>" + insertSmiles(mes.text);
+        }else
+            s += "<span class='message_name'>" + mes.name +
+				 ": </span><span class='message_text'>" + insertSmiles(mes.text);
+    }
+
+    s = "<div class='" + mclass + " "+_animShow+" animated'><div class='"+mclass+"-content'>" + s + "</span></div></div>"
+
+    // Создается объект на основе разметки сообщения
+    return $(s);
+}
+
+function onNewMessage(mes) {
+    var sex = createMessage( mes );
+    sex.appendTo("#root");
+    return sex;
+}
+
+function onClearUser(nick){
+    console.log("clear user:" + nick);
+}
+
+function onData(data) {
+    try{
+        var start = data.messages.length - remainMessages;
+        if (start < 0) start = 0;
+
+        for (var i = start; i < data.messages.length; ++i) {
+            var mes = data.messages[i];
+            var old = chats.oldMes[mes.gid];
+            if (old == undefined) {
+                try {
+    				//console.log(mes);
+                    var m = onNewMessage(mes);
+                    chats.delMe.push(m);
+                    chats.oldMes[mes.gid] = {
+                        delay: 5,
+                        message: m,
+                        data: mes
+                    };
+                } catch (err) {
+                   console.error(err);
+                   //alert("failed: " + err);
+                }
+            }else{
+                if( old.data.text != mes.text ){
+                    console.log("text deleted: " + old.data.text );
+                    old.data = mes;
+                    old.message.html("<div></div>");
+                }
+            }
+        }
+
+    }catch(pika){
+        //alert(pika);
+        console.log(pika);
+    }
+    setTimeout(getData, 1000);
+}
+
+function validateAndScroll(){
+    try{
+        if (chats.delMe.length > 1) {
+            var nDelMe = [];
+
+            for (var j = 0; j < chats.delMe.length; ++j)
+                if (chats.delMe[j].hasClass(_animHide)) {
+                    chats.delMe[j].remove();
+                } else {
+                    nDelMe.push(chats.delMe[j])
+                }
+
+            for (var j = 0; j < chats.delMe.length; ++j) {
+                var mes = chats.delMe[j];
+                if (isOffscreen(mes))
+                    mes.addClass(_animHide)
+            }
+            chats.delMe = nDelMe;
+        }
+
+        $("#root").animate({ scrollTop: $("#root")[0].scrollHeight + 1000 }, 90);
+        setTimeout(validateAndScroll, 100);
+    }catch( err ){
+        console.log(pika);
+    }
+}
+
+
+
+function getData() {
+    //console.log("getdata");
+    $.getJSON(_rootChat)
+        .done(onData)
+        .fail(function (jqxhr, textStatus, error) {
+            console.log("failed: " + error);
+            setTimeout(getData, 5000);
+        });
+}
+
+function onUpdate(){
+
+}
+
+function onStart(){
+    getData();
+    validateAndScroll();
+}
+</script>
+</head>
+<body onload="onStart();">
+<div id="back3d">
+<div id="root">
+    <div style="height:2000px" />
+</div></div>
+</body>
+</html>

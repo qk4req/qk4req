@@ -19,10 +19,6 @@ class Entity
      * @ORM\Column(type="string", columnDefinition="ENUM('donation','follower','subscription','progress_bar')")
      */
     protected $type;
-    /** 
-     * @ORM\Column(type="float")
-     */
-    protected $volume;
 	/** 
 	 * @ORM\Column(type="string") 
 	 */
@@ -38,9 +34,5 @@ class Entity
 
     public function getType() {
         return $this->type;
-    }
-
-    public function getVolume() {
-        return $this->volume;
     }
 }

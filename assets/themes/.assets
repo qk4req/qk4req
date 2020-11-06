@@ -1,0 +1,143 @@
+{
+	"config": {
+		"path": "{ROOT}/themes/master/"
+	},
+	"collection": [
+		{
+			"name": "main",
+			"files": {
+				"css": [
+					"css/main.css"
+				]
+			}
+		},
+		{
+			"name": "overlay",
+			"files": {
+				"css": [
+					"css/overlay.css"
+				]
+			}
+		},
+		{
+			"name": "popup-menu",
+			"files": {
+				"css": [
+					"css/Example.css",
+					"css/Popup-plugin.css"
+				],
+				"js": [
+					"js/Popup-plugin.js"
+				]
+			}
+		},
+		{
+			"name": "widgets/events",
+			"files": {
+				"css": [
+					"css/widgets/events.css"
+				],
+				"js": [
+					"js/widgets/events.js"
+				]
+			},
+			"require": [
+				"jquery",
+				"cryptojs",
+				"moment",
+				"socket.io",
+				"soundmanager2",
+				"animate.css",
+				"janimate",
+				"fontawesome",
+				"overlay",
+				"qs"
+			]
+		},
+		{
+			"name": "widgets/header",
+			"files": {
+				"css": [
+					"css/widgets/header.css"
+				],
+				"js": [
+					"js/widgets/header.js"
+				]
+			},
+			"require": [
+				"jquery",
+				"moment",
+				"animate.css",
+				"janimate",
+				"fontawesome",
+				"overlay"
+			]
+		},
+		{
+			"name": "widgets/olezha",
+			"files": {
+				"css": [
+					"css/widgets/olezha.css"
+				],
+				"js": [
+					"js/widgets/olezha.js"
+				]
+			},
+			"require": [
+				"jquery",
+				"soundmanager2",
+				"animate.css",
+				"janimate",
+				"overlay"
+			]
+		},
+		{
+			"name": "events",
+			"files": {
+				"css": [
+					"css/events.css"
+				],
+				"js": [
+					"js/events.js"
+				]
+			},
+			"require": [
+				"jquery",
+				"cryptojs",
+				"moment",
+				"socket.io",
+				"responsive",
+				"bootstrap",
+				"fontawesome",
+				"lineawesome",
+				"overlayscrollbars",
+				"popup-menu",
+				"main"
+			]
+		},
+		{
+			"name": "channel",
+			"files": {
+				"css": [
+					"css/channel.css"
+				],
+				"js": [
+					"js/channel.js"
+				]
+			},
+			"require": [
+				"jquery",
+				"socket.io",
+				"responsive",
+				"bootstrap",
+				"animate.css",
+				"magnific-popup",
+				"fontawesome",
+				"lineawesome",
+				"hls.js",
+				"overlayscrollbars",
+				"main"
+			]
+		}
+	]
+}

@@ -26,7 +26,6 @@ class FollowersController extends Controller {
 				'notification'=>$notification !== null ? [
 					'id'=>$notification->getId(),
 					'type'=>$notification->getType(),
-					'volume'=>$notification->getVolume(),
 					'src'=>$notification->getSrc()
 				] : null
 			];

@@ -3,20 +3,24 @@ namespace Models\Donation;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Carbon\Carbon;
 
 class Repository extends EntityRepository
 {
-	public function makeTop($period)
+	public function makeTop($start, $end)
 	{
 		$builder = $this->_em->createQueryBuilder();
-
-		$period = Helper::normalizePeriod($period);
-		$now = time();
+		$exprBuilder = $builder->expr();
 		return $builder
-						->select('d.name, SUM(d.amount) AS total')
+						->select('d.from, SUM(d.amount) AS total')
 						->from(Entity::class, 'd')
-						->where($builder->expr()->between('d.created_at', ($period === 0 ? 0 : $now-$period), $now))
-						->groupBy('d.name')
+						->where($exprBuilder->andX(
+							$exprBuilder->gte('d.created_at', ':start'),
+							$exprBuilder->lte('d.created_at', ':end'),
+							$exprBuilder->isNotNull('d.amount')
+						))
+						->setParameters(['start'=>$start, 'end'=>$end])
+						->groupBy('d.from')
 						->orderBy('total', 'DESC')
 						->setMaxResults(3)
 						->getQuery()

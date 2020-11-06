@@ -13,6 +13,7 @@ class Autoloader extends \Composer\Autoload\ClassLoader
 			'RBAC\\'=>[LIBRARIES_DIR.'RBAC'],
 			'Middlewares\\'=>[LIBRARIES_DIR.'Middlewares'],
 			'Providers\\'=>[LIBRARIES_DIR.'Providers'],
+			'Extensions\\'=>[LIBRARIES_DIR.'Extensions'],
 		];
 		foreach ($psr4 as $ns=> $p) $this->setPsr4($ns, $p);
 		$this->register();

@@ -10,11 +10,13 @@ abstract class View
 	private $renderer;
 	private $assetManager;
 	protected $themeName = 'master';
-	protected $assetPath = '/assets/themes';
-	protected $assetCollection = [];
+	protected $assetsPath = '/assets/themes';
+	protected $assetsCollection = [];
 	protected $assets = [];
-	protected $viewSuffix = 'View';
-	protected $viewPath = '';
+	protected $assetName;
+	protected $viewsSuffix = 'View';
+	protected $viewsPrefix = 'Views\\';
+	protected $viewsPath = '';
 	protected $templateExtension = '.phtml';
 	protected $templateName;
 
@@ -27,30 +29,39 @@ abstract class View
 
 	public function init() {
 		$this->normalizeTemplateName();
-		$this->normalizeAssetCollection();
-		$this->assetManager->setCollection($this->assetCollection);
+		$this->normalizeAssetsCollection();
+		$this->assetManager->setCollection($this->assetsCollection);
 		if (is_array($this->assets) && !empty($this->assets))
 			foreach ($this->assets as $asset) {
 				$this->assetManager->load($asset);
 			}
+		else {
+			$asset = $this->normalizeAssetName();
+			$this->assetManager->load($asset);
+		}
+	}
+
+	public function normalizeAssetName() {
+		return $this->assetName = str_replace('\\', '/', $this->normalizeTemplateName());
 	}
 
 	public function normalizeTemplateName() {
+		if ($this->templateName) return $this->templateName; 
 		$fullClassName = get_class($this);
-		$className = substr($fullClassName, strrpos($fullClassName, '\\')+1);
-		return $this->templateName = strtolower(substr($className, 0, strpos($className, $this->viewSuffix)));
+		$className = substr($fullClassName, strlen($this->viewsPrefix));
+		return $this->templateName = strtolower(substr($className, 0, (strlen($className) - strlen($this->viewsSuffix))));
 	}
 
-	public function normalizeViewPath() {
-		return $this->viewPath = rtrim($this->viewPath, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+	public function normalizeViewsPath() {
+		return $this->viewsPath = rtrim($this->viewsPath, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 	}
 
-	public function normalizeAssetCollection() {
-		if (is_array($this->assetCollection) && !empty($this->assetCollection)) {
-			foreach ($this->assetCollection as &$asset) {
+	public function normalizeAssetsCollection() {
+		if (is_array($this->assetsCollection) && !empty($this->assetsCollection)) {
+			foreach ($this->assetsCollection as &$asset) {
 				foreach ($asset['files'] as &$files) {
 					foreach ($files as &$file) {
-						$file = $this->assetPath.'/'.$this->themeName.$file;
+						$file = $this->assetsPath.'/'.$this->themeName.$file;
 					}
 				}
 			}
@@ -61,8 +72,8 @@ abstract class View
 		return $this->templateName;
 	}
 
-	public function getViewPath() {
-		return $this->viewPath;
+	public function getViewsPath() {
+		return $this->viewsPath;
 	}
 
 	public function getTemplateExtension() {
@@ -70,6 +81,6 @@ abstract class View
 	}
 
 	public function render(array $params = []) {
-		return $this->renderer->render($this->getViewPath().$this->getTemplateName().$this->getTemplateExtension(), $params);
+		return $this->renderer->render($this->getViewsPath().$this->getTemplateName().$this->getTemplateExtension(), $params);
 	}
 }

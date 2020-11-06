@@ -1,7 +1,7 @@
 <?php
 namespace RBAC\Roles;
 
-use Controllers\{
+use Controllers\Widgets\{
 	HeaderController,
 	EventsController,
 	OlezhaController
@@ -42,10 +42,11 @@ return [
 				DonationsController::class,
 				FollowersController::class,
 				SubscriptionsController::class,
-				OnPublishController::class,
+				//OnPublishController::class,
 				HeaderController::class,
 				EventsController::class,
-				OlezhaController::class
+				OlezhaController::class,
+				\Controllers\EventsController::class
 			]
 		),
 		new User(
