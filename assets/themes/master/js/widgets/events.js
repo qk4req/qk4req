@@ -33,9 +33,9 @@ v.on("connect", () => {
 										target.set(k, v);
 									}
 
-									if (d) {
-										e.emit("update", v);
-									}
+									//if (d) {
+									//	e.emit("update", v);
+									//}
 								}
 							}
 							if (["get"].includes(prop)) {
@@ -96,13 +96,13 @@ v.on("connect", () => {
 							if (playing) {
 								if (nSound && nSound.id === `notification-${k}`) {
 									//nSound.stop();
-									nSound.destruct();
+									//nSound.destruct();
 									nSound = undefined;
 								}
 
 								if (dSound && dSound.id === `dubbing-${k}`) {
 									//dSound.stop();
-									dSound.destruct();
+									//dSound.destruct();
 									dSound = undefined;
 								}
 							}
@@ -258,7 +258,7 @@ v.on("connect", () => {
 											playing = false;
 										},
 										onstop: () => {
-											dSound.destruct();
+											//dSound.destruct();
 											events.set(event[0], {
 												status: "shown"
 											}, true);
@@ -280,7 +280,7 @@ v.on("connect", () => {
 							//events.splice(0, 1);
 						},
 						onstop: () => {
-							nSound.destruct();
+							//nSound.destruct();
 							events.set(event[0], {
 								status: "shown"
 							}, true);
