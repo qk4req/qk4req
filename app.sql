@@ -62,31 +62,41 @@ DROP TABLE IF EXISTS `donations`;
 CREATE TABLE IF NOT EXISTS `donations` (
   `id` int NOT NULL AUTO_INCREMENT,
   `notification_id` int DEFAULT NULL,
-  `from` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `easter_egg_id` int DEFAULT NULL,
+  `from` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `amount` float(11,2) unsigned DEFAULT NULL,
-  `original_amount` float(11,4) unsigned NOT NULL,
-  `original_currency` char(3) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `original_amount` float(11,4) unsigned DEFAULT NULL,
+  `original_currency` char(5) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `comment` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `platform` enum('da','donationalerts','sl','streamlabs') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `dubbing_src` varchar(1000) DEFAULT NULL,
+  `status` enum('shown','hidden') CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK1` (`notification_id`),
   KEY `FK2` (`easter_egg_id`),
   CONSTRAINT `FK_to_easter_eggs1` FOREIGN KEY (`easter_egg_id`) REFERENCES `easter_eggs` (`id`),
   CONSTRAINT `FK_to_notification1` FOREIGN KEY (`notification_id`) REFERENCES `notifications` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы qk4req.donations: ~5 rows (приблизительно)
+-- Дамп данных таблицы qk4req.donations: ~0 rows (приблизительно)
 DELETE FROM `donations`;
 /*!40000 ALTER TABLE `donations` DISABLE KEYS */;
-INSERT INTO `donations` (`id`, `notification_id`, `from`, `easter_egg_id`, `amount`, `original_amount`, `original_currency`, `comment`, `created_at`, `platform`) VALUES
-	(3, NULL, '123123', 2, 246925.97, 246925.9688, 'RUB', '3213233', '2020-08-29 18:21:08', 'streamlabs'),
-	(4, NULL, '1231233', 2, 2444.81, 2444.8115, 'RUB', '3333', '2020-08-29 18:23:57', 'streamlabs'),
-	(5, NULL, 'asdasdasdasda', 2, 9112.48, 9112.4795, 'RUB', 'sdasdasdasd', '2020-08-29 18:29:48', 'streamlabs'),
-	(6, NULL, 'asdasdasd123123', 2, 9121592.00, 9121592.0000, 'RUB', 'asdasd', '2020-08-29 18:30:14', 'streamlabs'),
-	(7, NULL, 'zxczxc', 2, 913692.75, 913692.7500, 'RUB', 'asdasd', '2020-08-29 18:31:20', 'streamlabs');
 /*!40000 ALTER TABLE `donations` ENABLE KEYS */;
+
+-- Дамп структуры для таблица qk4req.dubbings
+DROP TABLE IF EXISTS `dubbings`;
+CREATE TABLE IF NOT EXISTS `dubbings` (
+  `id` int NOT NULL,
+  `src` varchar(1000) NOT NULL,
+  `volume` tinyint NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы qk4req.dubbings: ~0 rows (приблизительно)
+DELETE FROM `dubbings`;
+/*!40000 ALTER TABLE `dubbings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dubbings` ENABLE KEYS */;
 
 -- Дамп структуры для таблица qk4req.easter_eggs
 DROP TABLE IF EXISTS `easter_eggs`;
@@ -95,15 +105,14 @@ CREATE TABLE IF NOT EXISTS `easter_eggs` (
   `expression` varchar(10) NOT NULL,
   `value` float(11,2) NOT NULL,
   `src` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `volume` float(12,0) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы qk4req.easter_eggs: ~0 rows (приблизительно)
+-- Дамп данных таблицы qk4req.easter_eggs: ~1 rows (приблизительно)
 DELETE FROM `easter_eggs`;
 /*!40000 ALTER TABLE `easter_eggs` DISABLE KEYS */;
-INSERT INTO `easter_eggs` (`id`, `expression`, `value`, `src`, `volume`) VALUES
-	(2, '>=', 1000.00, '/assets/media', 0);
+INSERT INTO `easter_eggs` (`id`, `expression`, `value`, `src`) VALUES
+	(2, '>=', 1000.00, '/assets/media/easter_eggs/dimooon.mp3');
 /*!40000 ALTER TABLE `easter_eggs` ENABLE KEYS */;
 
 -- Дамп структуры для таблица qk4req.followers
@@ -113,35 +122,39 @@ CREATE TABLE IF NOT EXISTS `followers` (
   `notification_id` int NOT NULL,
   `name` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL,
+  `status` enum('shown','hidden') DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK1` (`notification_id`),
   CONSTRAINT `FK_to_notification2` FOREIGN KEY (`notification_id`) REFERENCES `notifications` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы qk4req.followers: ~0 rows (приблизительно)
 DELETE FROM `followers`;
 /*!40000 ALTER TABLE `followers` DISABLE KEYS */;
+INSERT INTO `followers` (`id`, `notification_id`, `name`, `created_at`, `status`) VALUES
+	(1, 6, 'test1', '2020-09-26 22:45:25', 'shown'),
+	(2, 6, 'test2', '2020-09-26 22:45:25', 'shown');
 /*!40000 ALTER TABLE `followers` ENABLE KEYS */;
 
 -- Дамп структуры для таблица qk4req.notifications
 DROP TABLE IF EXISTS `notifications`;
 CREATE TABLE IF NOT EXISTS `notifications` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `type` enum('donation','follower','subscription','progress_bar') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `src` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `volume` float(12,0) NOT NULL DEFAULT '1',
+  `type` enum('donation','follower','subscription','progress_bar','dubbing') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `src` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `type` (`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы qk4req.notifications: ~4 rows (приблизительно)
+-- Дамп данных таблицы qk4req.notifications: ~5 rows (приблизительно)
 DELETE FROM `notifications`;
 /*!40000 ALTER TABLE `notifications` DISABLE KEYS */;
-INSERT INTO `notifications` (`id`, `type`, `src`, `volume`) VALUES
-	(4, 'donation', '/assets/themes/master/media/notifications/donation.mp3', 1),
-	(6, 'follower', '/assets/themes/master/media/notifications/follower.mp3', 1),
-	(7, 'subscription', '/assets/themes/master/media/notifications/subscription.mp3', 1),
-	(8, 'progress_bar', '/assets/themes/master/media/notifications/progress_bar.mp3', 1);
+INSERT INTO `notifications` (`id`, `type`, `src`) VALUES
+	(4, 'donation', '/assets/media/notifications/donation.mp3'),
+	(6, 'follower', '/assets/media/notifications/follower.mp3'),
+	(7, 'subscription', '/assets/media/notifications/subscription.mp3'),
+	(8, 'progress_bar', '/assets/media/notifications/progress_bar.mp3'),
+	(9, 'dubbing', NULL);
 /*!40000 ALTER TABLE `notifications` ENABLE KEYS */;
 
 -- Дамп структуры для таблица qk4req.progress_bar_levels
@@ -211,6 +224,7 @@ CREATE TABLE IF NOT EXISTS `subscriptions` (
   `name` varchar(50) NOT NULL,
   `months` int NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
+  `status` enum('shown','hidden') DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK1` (`notification_id`),
   CONSTRAINT `FK_to_notification3` FOREIGN KEY (`notification_id`) REFERENCES `notifications` (`id`)
@@ -254,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `votings` (
   UNIQUE KEY `title` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы qk4req.votings: ~0 rows (приблизительно)
+-- Дамп данных таблицы qk4req.votings: ~2 rows (приблизительно)
 DELETE FROM `votings`;
 /*!40000 ALTER TABLE `votings` DISABLE KEYS */;
 INSERT INTO `votings` (`id`, `title`, `start`, `end`) VALUES
@@ -275,7 +289,7 @@ CREATE TABLE IF NOT EXISTS `voting_points` (
   CONSTRAINT `FK_to_voting2` FOREIGN KEY (`voting_id`) REFERENCES `votings` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы qk4req.voting_points: ~0 rows (приблизительно)
+-- Дамп данных таблицы qk4req.voting_points: ~8 rows (приблизительно)
 DELETE FROM `voting_points`;
 /*!40000 ALTER TABLE `voting_points` DISABLE KEYS */;
 INSERT INTO `voting_points` (`id`, `voting_id`, `title`, `background_color`, `border_color`) VALUES

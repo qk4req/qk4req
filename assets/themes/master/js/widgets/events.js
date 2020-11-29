@@ -16,7 +16,7 @@ v.on("connect", () => {
 				reconnectionDelay: 1000,
 			});
 			e.on("connect", () => {
-				var repo = new Map/*[]*/, playing = false, signs = {
+				var repo = new Map, playing = false, signs = {
 					RUB: "ruble",
 					USD: "dollar",
 					EUR: "euro"
@@ -26,16 +26,12 @@ v.on("connect", () => {
 						const val = target[prop];
 						if (typeof val === "function") {
 							if (["set"].includes(prop)) {
-								return function (k, v, d = false) {
+								return function (k, v) {
 									if (target.has(k)) {
+										_v = target.get(k);
 										v = Object.assign(target.get(k), v);
-									} else {
-										target.set(k, v);
 									}
-
-									//if (d) {
-									//	e.emit("update", v);
-									//}
+									target.set(k, v);
 								}
 							}
 							if (["get"].includes(prop)) {
@@ -63,7 +59,6 @@ v.on("connect", () => {
 				});
 
 				e.on("inited", (data) => {
-					console.log(data);
 					if (data.success && Array.isArray(data.payload) && data.payload.length > 0) {
 						data.payload.forEach((event) => {
 							events.set(CryptoJS.MD5(`${event.id}+${event.notification.type}`).toString(), event);
@@ -72,9 +67,9 @@ v.on("connect", () => {
 				});
 
 				e.on("updated", (data) => {
-					if (data.success/* && data.payload.length === 1*/) {
+					if (data.success) {
 						var event = data.payload[0], k = CryptoJS.MD5(`${event.id}+${event.notification.type}`).toString();
-
+						
 						if (events.has(k)) events.set(k, event);
 					}
 				});
@@ -84,7 +79,6 @@ v.on("connect", () => {
 						var event = data.payload[0];
 
 						events.set(CryptoJS.MD5(`${event.id}+${event.notification.type}`).toString(), event);
-						//events.push(data.payload[0]);
 					}
 				});
 
@@ -95,14 +89,12 @@ v.on("connect", () => {
 							el.hide();
 							if (playing) {
 								if (nSound && nSound.id === `notification-${k}`) {
-									//nSound.stop();
-									//nSound.destruct();
+									nSound.stop();
 									nSound = undefined;
 								}
 
 								if (dSound && dSound.id === `dubbing-${k}`) {
-									//dSound.stop();
-									//dSound.destruct();
+									dSound.stop();
 									dSound = undefined;
 								}
 							}
@@ -110,61 +102,6 @@ v.on("connect", () => {
 
 						if (v.status === null && el.is(":hidden")) {
 							el.show();
-							/*if (!playing) {
-								if (nSound && nSound.id === `notification-${k}`) {
-									nSound.play();
-								} else {
-									nSound = soundManager.createSound({
-										id: `notification-${k}`,
-										url: notification.src,
-										autoLoad: true,
-										volume: volumes.notification,
-										onload: function() {
-											this.play();
-										},
-										onfinish: () => {
-											if (["donation", "easter_egg"].indexOf(notification.type) !== -1 && event.dubbing !== null) {
-												setTimeout(() => {
-													dSound = soundManager.createSound({
-														id: `dubbing-${key}`,
-														url: event.dubbing.src,
-														autoLoad: true,
-														volume: volumes.dubbing,
-														onload: function() {
-															this.play();
-														},
-														onfinish: () => {
-															playing = false;
-															nSound = undefined;
-															dSound = undefined;
-														},
-														onerror: (code) => {
-															this.stop();
-															events.delete(event["id"]);
-															//events.splice(0, 1);
-															playing = false;
-															nSound = undefined;
-															dSound = undefined;
-														}
-													});
-												}, 1000);
-											} else {
-												playing = false;
-											}
-											events.delete(event["id"]);
-											//events.splice(0, 1);
-										},
-										onerror: (code) => {
-											this.stop();
-											events.delete(event["id"]);
-											//events.splice(0, 1);
-											playing = false;
-											nSound = undefined;
-											//eve
-										}
-									});
-								}
-							}*/
 						}
 
 					});
@@ -173,24 +110,10 @@ v.on("connect", () => {
 						if (v.status === null) return u;
 					});
 					if (event === undefined || playing === true) return;
-					//var event = events.get().pop()/*events[0]*/,
-					/*notification = event[1].notification !== undefined ? event[1].notification :
-					(
-						(event[1].notification_type !== null && event[1].notification_src) ?
-						{
-							type: event[1].notification_type,
-							src: event[1].notification_src
-						} :
-						{
-							type: "easter_egg",
-							src: event[1].easter_egg_src
-						}
-					);//, key = CryptoJS.MD5(`${event.id}+${notification.type}`).toString();*/
 					playing = true;
 					if ($(".right-sidebar .event.bounceInRight").length > 3) {
 						var first = $(".right-sidebar .event.bounceInRight").first();
-						first.jAnimate("rotateOutUpRight", () => {
-							//first.remove();
+						first.jAnimateOnce("rotateOutUpRight", () => {
 							first.hide();
 						});
 					}
@@ -204,14 +127,14 @@ v.on("connect", () => {
 									${
 										(event[1].original_amount !== null && event[1].original_currency !== null)
 										?
-										`${event[1].original_amount.toFixed(2)} <i class="fas fa-${(event[1].original_currency in signs ? signs[event[1].original_currency] : event[1].original_currency)} fa-xs"></i>`
+										`${event[1].original_amount.toFixed(2)} <i class="fa fa-${(event[1].original_currency in signs ? signs[event[1].original_currency] : event[1].original_currency)} fa-xs"></i>`
 										:
-										`${event[1].amount.toFixed(2)} <i class="fas fa-ruble fa-xs"></i>`	
+										`${event[1].amount.toFixed(2)} <i class="fa fa-ruble fa-xs"></i>`	
 									}`
 								:
 								`${event[1].name}`
 							)
-						}</span></div>`)//.find(".event").last().jAnimate("bounceInRight").show();
+						}</span></div>`)
 					} else {
 						__el.replaceWith(`<div data-key="${event[0]}" class="event ${event[1].notification.type}"><span>${
 							(
@@ -221,14 +144,14 @@ v.on("connect", () => {
 									${
 										(event[1].original_amount !== null && event[1].original_currency !== null)
 										?
-										`${event[1].original_amount.toFixed(2)} <i class="fas fa-${(event[1].original_currency in signs ? signs[event[1].original_currency] : event[1].original_currency)} fa-xs"></i>`
+										`${event[1].original_amount.toFixed(2)} <i class="fa fa-${(event[1].original_currency in signs ? signs[event[1].original_currency] : event[1].original_currency)} fa-xs"></i>`
 										:
-										`${event[1].amount.toFixed(2)} <i class="fas fa-ruble fa-xs"></i>`	
+										`${event[1].amount.toFixed(2)} <i class="fa fa-ruble fa-xs"></i>`	
 									}`
 								:
 								`${event[1].name}`
 							)
-						}</span></div>`);//.find(".event").last().jAnimate("bounceInRight").show();
+						}</span></div>`);
 					}
 					_el.find(".event").last().jAnimate("bounceInRight").show();
 
@@ -236,33 +159,40 @@ v.on("connect", () => {
 						id: `notification-${event[0]}`,
 						url: event[1].notification.src,
 						autoLoad: true,
+						autoPlay: true,
 						volume: volumes.notification,
-						onload: function() {
-							this.play();
-						},
 						onfinish: () => {
+							var el = $(`.right-sidebar .event[data-key=${event[0]}]`);
 							nSound = undefined;
+
 							if (["donation", "easter_egg"].indexOf(event[1].notification.type) !== -1 && event[1].dubbing) {
 								setTimeout(() => {
 									dSound = soundManager.createSound({
 										id: `dubbing-${event[0]}`,
 										url: event[1].dubbing.src,
 										autoLoad: true,
+										autoPlay: true,
 										volume: volumes.dubbing,
-										onload: function() {
-											this.play();
-										},
 										onfinish: () => {
-											//nSound = undefined;
 											dSound = undefined;
+											e.emit("update", event[1].notification.type, {
+												status: "shown"
+											}, event[1].id);
+											if (el.is(":visible")) {
+												el.jAnimateOnce("rotateOutUpRight", () => {
+													el.hide();
+												});
+											}
+
 											playing = false;
 										},
 										onstop: () => {
-											//dSound.destruct();
-											events.set(event[0], {
-												status: "shown"
-											}, true);
 											dSound = undefined;
+
+											e.emit("update", event[1].notification.type, {
+												status: "shown"
+											}, event[1].id);
+
 											playing = false;
 										},
 										onerror: (code) => {
@@ -271,29 +201,29 @@ v.on("connect", () => {
 									});
 								}, 1000);
 							} else {
+								e.emit("update", event[1].notification.type, {
+									status: "shown"
+								}, event[1].id);
+								if (el.is(":visible")) {
+									el.jAnimateOnce("rotateOutUpRight", () => {
+										el.hide();
+									});
+								}
+
 								playing = false;
 							}
-							events.set(event[0], {
-								status: "shown"
-							}, true);
-							//events.delete(event[0]);
-							//events.splice(0, 1);
 						},
 						onstop: () => {
-							//nSound.destruct();
-							events.set(event[0], {
-								status: "shown"
-							}, true);
 							nSound = undefined;
+
+							e.emit("update", event[1].notification.type, {
+								status: "shown"
+							}, event[1].id);
+
 							playing = false;
 						},
 						onerror: (code) => {
 							this.stop();
-							//events.delete(event[0]);
-							//events.splice(0, 1);
-							//playing = false;
-							//nSound = undefined;
-							//eve
 						}
 					});
 				}, 1000);
@@ -310,17 +240,3 @@ v.on("connect", () => {
 		}
 	});
 });
-/*const n = io("http://localhost:3000/notifications", {
-	reconnection: true,
-	reconnectionDelayMax: 5000,
-	reconnectionDelay: 1000,
-});
-n.on("connect", () => {
-});
-const d = io("http://localhost:3000/dubbings", {
-	reconnection: true,
-	reconnectionDelayMax: 5000,
-	reconnectionDelay: 1000,
-});
-d.on("connect", () => {
-});*/

@@ -1,16 +1,16 @@
 $(function() {
-	var o = $(".olezha");
+	var el = $(".olezha");
 	setInterval(function() {
-		o.jAnimateOnce("fadeInUp", function() {
+		el.jAnimate("fadeInUp", function() {
 			setTimeout(function() {
-				o.jAnimateOnce("wobble", function() {
+				el.jAnimate("wobble", function() {
 					setTimeout(function() {
-						o.jAnimateOnce("fadeOutDown", function() {
-							o.hide();
+						el.jAnimateOnce("fadeOutDown", function() {
+							el.hide();
 						});
-					}, 90000);//1.5 минуты
+					}, 30000);//30сек
 				});
-			}, 90000);//1.5 минуты
+			}, 10000);//10сек
 		}).show();
 	}, 1200000);//20 минут
 });

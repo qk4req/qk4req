@@ -1,8 +1,8 @@
 var header, index = 0, max;
 const signs = {
-	RUB: "ruble",
-	USD: "dollar",
-	EUR: "euro"
+	RUB: "rub",
+	USD: "usd",
+	EUR: "eur"
 };
 
 setInterval(function() {
@@ -28,11 +28,11 @@ setInterval(function() {
 						
 						
 						header[0][0].forEach(function(unit, i) {
-							donations += `<p>${unit["name"]}<span>${unit["amount"]} <i class="fas fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "ruble")}-sign fa-xs"></i></span></p>`;
+							donations += `<p>${unit["name"]}<span>${unit["amount"]} <i class="fa fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "rub")} fa-xs"></i></span></p>`;
 						});*/
 						header.first = response;
 						header.first.forEach(function(unit, i) {
-							donations += `<p>${unit["from"]}<span>${unit["amount"]} <i class="fas fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "ruble")}-sign fa-xs"></i></span></p>`;
+							donations += `<p>${unit["from"]}<span>${unit["amount"]} <i class="fa fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "rub")} fa-xs"></i></span></p>`;
 						});
 					}
 				}
@@ -48,11 +48,11 @@ setInterval(function() {
 						
 						
 						header[0][1].forEach(function(unit, p) {
-							followers += `<p>${unit["name"]}<span><i class="fab fa-twitch fa-sm"></i></i></span></p>`; 
+							followers += `<p>${unit["name"]}<span><i class="fa fa-twitch fa-sm"></i></i></span></p>`; 
 						});*/
 						header.second = response;
 						header.second.forEach(function(unit, p) {
-							followers += `<p>${unit["name"]}<span><i class="fab fa-twitch fa-sm"></i></i></span></p>`; 
+							followers += `<p>${unit["name"]}<span><i class="fa fa-twitch fa-xs"></i></i></span></p>`; 
 						});
 					}
 				}
@@ -68,11 +68,11 @@ setInterval(function() {
 						
 						
 						header[0][2].forEach(function(unit, j) {
-							subscriptions += `<p>${unit["name"]}<span><i class="fab fa-twitch fa-sm"></i></i></span></p>`; 
+							subscriptions += `<p>${unit["name"]}<span><i class="fa fa-twitch fa-sm"></i></i></span></p>`; 
 						});*/
 						header.third = response;
 						header.third.forEach(function(unit, j) {
-							subscriptions += `<p>${unit["name"]}<span><i class="fab fa-twitch fa-sm"></i></i></span></p>`; 
+							subscriptions += `<p>${unit["name"]}<span><i class="fa fa-twitch fa-xs"></i></i></span></p>`; 
 						});
 						$(".header").empty().append(`
 							<div class="last">
@@ -102,16 +102,16 @@ setInterval(function() {
 		case 1: {
 			var topDay = "", topMonth = "", topAllTime = "";
 
-			var start = moment({h:0, m:0, s:0, ms:0}), end = moment({h:23, m:59, s:59, ms:59});
+			//var start = moment({h:0, m:0, s:0, ms:0}), end = moment({h:23, m:59, s:59, ms:59});
 			$.ajax({
 				type: "GET",
-				url: `/api/donations/top?start=${start.utc().toISOString()}&end=${end.utc().toISOString()}`,
+				url: `/api/donations/top?start=${moment().startOf('day').utc().toISOString()}&end=${moment().endOf('day').utc().toISOString()}`,
 				success: function(response) {
 					if (response && Array.isArray(response)) {
 						header.first = response;
 						header.first.forEach(function(unit, i) {
-							//topDay += `<p>${unit["from"]}<span>${unit["total"]} <i class="fas fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "ruble")}-sign fa-xs"></i></span></p>`;
-							topDay += `<p>${unit["from"]}<span>${unit["total"]} <i class="fas fa-ruble-sign fa-xs"></i></span></p>`;
+							//topDay += `<p>${unit["from"]}<span>${unit["total"]} <i class="fa fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "rub")} fa-xs"></i></span></p>`;
+							topDay += `<p>${unit["from"]}<span>${unit["total"]} <i class="fa fa-rub fa-xs"></i></span></p>`;
 						});
 					}
 				}
@@ -120,13 +120,13 @@ setInterval(function() {
 
 			$.ajax({
 				type: "GET",
-				url: `/api/donations/top?start=${start.subtract(1, 'M').utc().toISOString()}&end=${end.utc().toISOString()}`,
+				url: `/api/donations/top?start=${moment().startOf('month').utc().toISOString()}&end=${moment().endOf('month').utc().toISOString()}`,
 				success: function(response) {
 					if (response && Array.isArray(response)) {
 						header.second = response;
 						header.second.forEach(function(unit, i) {
-							//topMonth += `<p>${unit["from"]}<span>${unit["amount"]} <i class="fas fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "ruble")}-sign fa-xs"></i></span></p>`;
-							topMonth += `<p>${unit["from"]}<span>${unit["total"]} <i class="fas fa-ruble-sign fa-xs"></i></span></p>`;
+							//topMonth += `<p>${unit["from"]}<span>${unit["amount"]} <i class="fas fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "rub")} fa-xs"></i></span></p>`;
+							topMonth += `<p>${unit["from"]}<span>${unit["total"]} <i class="fa fa-rub fa-xs"></i></span></p>`;
 						});
 					}
 				}
@@ -135,13 +135,13 @@ setInterval(function() {
 
 			$.ajax({
 				type: "GET",
-				url: `/api/donations/top?end=${end.utc().toISOString()}`,
+				url: `/api/donations/top?start=${moment().subtract(100, 'year').utc().toISOString()}&end=${moment().utc().toISOString()}`,
 				success: function(response) {
 					if (response && Array.isArray(response)) {
 						header.third = response;
 						header.third.forEach(function(unit, i) {
-							//topAllTime += `<p>${unit["from"]}<span>${unit["total"]} <i class="fas fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "ruble")}-sign fa-xs"></i></span></p>`;
-							topAllTime += `<p>${unit["from"]}<span>${unit["total"]} <i class="fas fa-ruble-sign fa-xs"></i></span></p>`;
+							//topAllTime += `<p>${unit["from"]}<span>${unit["total"]} <i class="fa fa-${(unit["currency"] in signs ? signs[unit["currency"]] : "rub")} fa-xs"></i></span></p>`;
+							topAllTime += `<p>${unit["from"]}<span>${unit["total"]} <i class="fa fa-rub fa-xs"></i></span></p>`;
 						});
 						$(".header").empty().append(`
 							<div class="top">
@@ -185,7 +185,7 @@ function show() {
 		$(`.header .block`).each(function(i, block) {
 			var e = $(block);
 			setTimeout(function() {
-				e.jAnimateOnce("slideInDown", function() {
+				e.jAnimate("slideInDown", function() {
 					var u = e.find(".units");
 					if (u.find("p").length > 0) {
 						u.slideDown("slow");

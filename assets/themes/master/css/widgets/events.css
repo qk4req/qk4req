@@ -20,6 +20,7 @@
 	height: 30px;
 	margin-left: 80px;
 	margin-top: 10px;
+	white-space: nowrap;
 }
 .event.donation, .event.easter_egg {
 	background: url("/assets/themes/master/images/event_1.png") no-repeat;

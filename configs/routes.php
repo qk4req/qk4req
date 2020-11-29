@@ -26,6 +26,7 @@ return [
 			$r->addRoute('GET', '/header', Widgets\HeaderController::class);
 			$r->addRoute('GET', '/events', Widgets\EventsController::class);
 			$r->addRoute('GET', '/olezha', Widgets\OlezhaController::class);
+			$r->addRoute('GET', '/banner', Widgets\OlezhaController::class);
 		});
 		$r->get('/events', \Controllers\EventsController::class);
 		//$r->get('/header', \Controllers\HeaderController::class);

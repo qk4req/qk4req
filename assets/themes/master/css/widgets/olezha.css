@@ -2,9 +2,9 @@
 	width: 400px;
 	height: 400px;
 	position: fixed;
-	bottom: 0;
+	bottom: -10px;
 	right: 0;
-	background-image: url('/assets/images/banner.png');
+	background-image: url('/assets/media/banner.png');
 	background-size: contain;
 	display: none;
 }
