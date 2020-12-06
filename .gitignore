@@ -1,4 +1,4 @@
-libraries/vendor
-assets/libraries
-assets/media
+/libraries/vendor
+/assets/libraries
+/assets/media
 ftpsync.settings
