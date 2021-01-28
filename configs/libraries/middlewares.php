@@ -7,14 +7,16 @@ use Laminas\Diactoros\{
 };
 use WoohooLabs\Harmony\Harmony;
 use WoohooLabs\Harmony\Middleware\{
-	FastRouteMiddleware,
-	DispatcherMiddleware,
+	//FastRouteMiddleware,
+	//DispatcherMiddleware,
 	HttpHandlerRunnerMiddleware
 };
 use Middlewares\{
 	ErrorHandler,
 	PhpSession,
-	AuthMiddleware
+	AuthMiddleware,
+	FastRouteMiddleware,
+	DispatcherMiddleware
 };
 use Lcobucci\ContentNegotiation\{
 	ContentTypeMiddleware,

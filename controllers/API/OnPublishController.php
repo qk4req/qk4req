@@ -2,14 +2,11 @@
 namespace Controllers\API;
 
 use App, MVC\Controller, Models\User\Entity;
-use Laminas\Diactoros\{ServerRequest, Response};
+use Laminas\Diactoros\{Response};
 use Doctrine\ORM\EntityManager;
 
 class OnPublishController extends Controller {
-	public function read() {
-	}
-
-	public function __invoke(ServerRequest $request, Response $response, EntityManager $man): Response
+	public function __invoke($req, $res, EntityManager $man)
 	{
 		$manager = App::get(EntityManager::class);
 		$repo = $manager->getRepository(Entity::class);
@@ -19,5 +16,8 @@ class OnPublishController extends Controller {
 		//if (!($auth->user->role instanceof Broadcaster)) return $response->withStatus(403);
 
 		return $response->withStatus(200);
+	}
+
+	public function read() {
 	}
 }

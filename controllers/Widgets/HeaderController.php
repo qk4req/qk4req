@@ -2,14 +2,13 @@
 namespace Controllers\Widgets;
 
 use App, MVC\Controller, Views\Widgets\HeaderView;
-use Laminas\Diactoros\{ServerRequest, Response};
 
 class HeaderController extends Controller {
-	public function __invoke(ServerRequest $request, Response $response): Response
+	public function __invoke($req, $res)
 	{
 		$headerView = App::get(HeaderView::class);
-		$response->getBody()->write($headerView->render());
+		$res->getBody()->write($headerView->render());
 
-		return $response;
+		return $res;
 	}
 }

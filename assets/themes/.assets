@@ -32,66 +32,6 @@
 			}
 		},
 		{
-			"name": "widgets/events",
-			"files": {
-				"css": [
-					"css/widgets/events.css"
-				],
-				"js": [
-					"js/widgets/events.js"
-				]
-			},
-			"require": [
-				"jquery",
-				"cryptojs",
-				"moment",
-				"socket.io",
-				"soundmanager2",
-				"animate.css",
-				"janimate",
-				"fontawesome",
-				"overlay",
-				"qs"
-			]
-		},
-		{
-			"name": "widgets/header",
-			"files": {
-				"css": [
-					"css/widgets/header.css"
-				],
-				"js": [
-					"js/widgets/header.js"
-				]
-			},
-			"require": [
-				"jquery",
-				"moment",
-				"animate.css",
-				"janimate",
-				"fontawesome",
-				"overlay"
-			]
-		},
-		{
-			"name": "widgets/olezha",
-			"files": {
-				"css": [
-					"css/widgets/olezha.css"
-				],
-				"js": [
-					"js/widgets/olezha.js"
-				]
-			},
-			"require": [
-				"jquery",
-				"soundmanager2",
-				"animate.css",
-				"janimate",
-				"overlay"
-			]
-		},
-		{
 			"name": "events",
 			"files": {
 				"css": [
@@ -137,6 +77,89 @@
 				"hls.js",
 				"overlayscrollbars",
 				"main"
+			]
+		},
+		{
+			"name": "widgets/events",
+			"files": {
+				"css": [
+					"css/widgets/events.css"
+				],
+				"js": [
+					"js/widgets/events.js"
+				]
+			},
+			"require": [
+				"jquery",
+				"cryptojs",
+				"moment",
+				"socket.io",
+				"soundmanager2",
+				"animate.css",
+				"janimate",
+				"fontawesome",
+				"overlay",
+				"qs"
+			]
+		},
+		{
+			"name": "widgets/stakan",
+			"files": {
+				"css": [
+					"css/widgets/stakan.css"
+				],
+				"js": [
+					"js/widgets/stakan.js"
+				]
+			},
+			"require": [
+				"jquery",
+				"tippy.js",
+				"cryptojs",
+				"moment",
+				"socket.io",
+				"soundmanager2",
+				"animate.css",
+				"janimate",
+				"fontawesome",
+				"overlay"
+			]
+		},
+		{
+			"name": "widgets/header",
+			"files": {
+				"css": [
+					"css/widgets/header.css"
+				],
+				"js": [
+					"js/widgets/header.js"
+				]
+			},
+			"require": [
+				"jquery",
+				"moment",
+				"animate.css",
+				"janimate",
+				"fontawesome",
+				"overlay"
+			]
+		},
+		{
+			"name": "widgets/olezha",
+			"files": {
+				"css": [
+					"css/widgets/olezha.css"
+				],
+				"js": [
+					"js/widgets/olezha.js"
+				]
+			},
+			"require": [
+				"jquery",
+				"soundmanager2",
+				"animate.css",
+				"janimate",
+				"overlay"
 			]
 		}
 	]

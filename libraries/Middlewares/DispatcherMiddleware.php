@@ -4,10 +4,14 @@ declare(strict_types=1);
 namespace Middlewares;
 
 use Psr\Container\ContainerInterface;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Server\MiddlewareInterface;
-use Psr\Http\Server\RequestHandlerInterface;
+use Psr\Http\Message\{
+	ServerRequestInterface,
+	ResponseInterface
+};
+use Psr\Http\Server\{
+	RequestHandlerInterface,
+	MiddlewareInterface
+};
 use WoohooLabs\Harmony\Exception\DispatcherException;
 use function is_array;
 use function is_callable;
@@ -15,28 +19,29 @@ use function is_string;
 
 class DispatcherMiddleware implements MiddlewareInterface
 {
-	protected $restMethodMap = [
+	private $restMethodsMap = [
 		'GET'=>'read',
 		'POST'=>'create',
 		'PUT'=>'update',
 		'PATCH'=>'update',
 		'DELETE'=>'delete'
 	];
-	protected $restHeaders = [
-		'application/json'
+	protected $restEntries = [
+		'Controllers\\API'
 	];
 	protected $container;
-	protected $action;
+	protected $actionAttributeName;
 
-	public function __construct(?ContainerInterface $container, string $action = "__action")
+
+	public function __construct(?ContainerInterface $container, string $actionAttributeName = "__action")
 	{
 		$this->container = $container;
-		$this->action = $action;
+		$this->actionAttributeName = $actionAttributeName;
 	}
 
 	public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
 	{
-		$action = $request->getAttribute($this->action);
+		list($status, $action, $params) = $request->getAttribute($this->actionAttributeName);
 
 		if ($action === null) {
 			throw new DispatcherException(
@@ -45,25 +50,17 @@ class DispatcherMiddleware implements MiddlewareInterface
 			);
 		}
 
-		$action = is_string($action) ? [$action, '__invoke'] : $action;
-
-		//$acceptHeader = strtolower($request->getHeader('Accept')[0]);
-
-		//if (in_array($acceptHeader, $this->restHeaders)) {
-		//	$method = strtoupper(\Laminas\Diactoros\marshalMethodFromSapi($request->getServerParams()));
-		//	$action[1] = $this->restMethodMap[$method];
-		//}
-
 		$response = $handler->handle($request);
-
-		/*if (is_array($action) && is_string($action[0]) && is_string($action[1])) {
-			$action = $this->container->get($action[0]);
-		} else {
-			if (is_callable($action) === false) {
-				$action = $this->container->get($action);
+		if (!is_array($action)) {
+			foreach ($this->restEntries as $entry) {
+				if (strpos($action, $entry) !== false && array_key_exists($method = $request->getMethod(), $this->restMethodsMap)) {
+					$action = [$action, $this->restMethodsMap[$method]];
+				}
+				break;
 			}
-		}*/
-		$response = $this->container->call($action);
+		}
+		$action = is_string($action) ? [$action, '__invoke'] : $action;
+		$response = $this->container->call($action, [$request, $response]);
 
 		return $response;
 	}
@@ -78,13 +75,13 @@ class DispatcherMiddleware implements MiddlewareInterface
 		$this->container = $container;
 	}
 
-	public function getaction(): string
+	public function getActionAttributeName(): string
 	{
-		return $this->action;
+		return $this->actionAttributeName;
 	}
 
-	public function setaction(string $action): void
+	public function setActionAttributeName(string $actionAttributeName): void
 	{
-		$this->action = $action;
+		$this->actionAttributeName = $actionAttributeName;
 	}
 }

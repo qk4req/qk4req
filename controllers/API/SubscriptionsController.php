@@ -2,17 +2,16 @@
 namespace Controllers\API;
 
 use App, MVC\Controller, Models\Subscription\Entity;
-use Laminas\Diactoros\{ServerRequest, Response\JsonResponse};
+use Laminas\Diactoros\{Response\JsonResponse};
 use Doctrine\ORM\EntityManager;
-//use Symfony\Component\Serializer\Serializer;
 
 class SubscriptionsController extends Controller {
-	public function __invoke(EntityManager $man)
+	public function __invoke($req, $res, EntityManager $man)
 	{
-		return $this->read($man, $ser);
+		return $this->read($req, $res, $man);
 	}
 	
-	public function read(EntityManager $man)
+	public function read($req, $res, EntityManager $man)
 	{
 		$repo = $man->getRepository(Entity::class);
 		$a = $repo->findBy([], ['id'=>'DESC'], 3);

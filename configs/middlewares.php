@@ -11,11 +11,12 @@ use Laminas\Diactoros\{
 	ResponseFactory
 };
 use WoohooLabs\Harmony\Middleware\{
-	FastRouteMiddleware,
+	//FastRouteMiddleware,
 	//DispatcherMiddleware,
 	HttpHandlerRunnerMiddleware
 };
 use Middlewares\{
+	FastRouteMiddleware,
 	ErrorHandler,
 	PhpSession,
 	AuthMiddleware,
@@ -25,11 +26,11 @@ use Middlewares\{
 return [
 	'middlewares'=>[
 		HttpHandlerRunnerMiddleware::class,
-		ContentTypeMiddleware::class,
 		ErrorHandler::class,
 		FastRouteMiddleware::class,
 		PhpSession::class,
 		AuthMiddleware::class,
-		DispatcherMiddleware::class
+		DispatcherMiddleware::class,
+		ContentTypeMiddleware::class
 	]
 ];

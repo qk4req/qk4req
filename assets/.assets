@@ -17,10 +17,7 @@
 				"css": [
 					"bootstrap/dist/css/bootstrap.min.css"
 				]
-			},
-			"require": [
-				"popper.js"
-			]
+			}
 		},
 		{
 			"name": "modernizr",
@@ -28,10 +25,7 @@
 				"js": [
 					"modernizr/dist/modernizr.min.js"
 				]
-			},
-			"require": [
-				"popper.js"
-			]
+			}
 		},
 		{
 			"name": "animate.css",
@@ -74,20 +68,25 @@
 				"css": [
 					"magnific-popup/dist/magnific-popup.css"
 				]
-			},
-			"require": [
-				"jquery"
-			]
+			}
 		},
 		{
 			"name": "popper.js",
 			"files": {
 				"js": [
-					"popper.js/dist/umd/popper.min.js"
+					"@popperjs/core/dist/umd/popper.min.js"
+				]
+			}
+		},
+		{
+			"name": "tippy.js",
+			"files": {
+				"js": [
+					"tippy.js/dist/tippy-bundle.umd.min.js"
 				]
 			},
 			"require": [
-				"jquery"
+				"popper.js"
 			]
 		},
 		{
@@ -96,10 +95,7 @@
 				"js": [
 					"hls.js/dist/hls.min.js"
 				]
-			},
-			"require": [
-				"video.js"
-			]
+			}
 		},
 		{
 			"name": "video.js",
@@ -132,10 +128,7 @@
 				"js": [
 					"overlayscrollbars/js/jquery.overlayScrollbars.min.js"
 				]
-			},
-			"require": [
-				"jquery"
-			]
+			}
 		},
 		{
 			"name": "socket.io",

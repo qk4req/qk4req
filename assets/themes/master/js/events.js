@@ -3,7 +3,7 @@
 				reconnectionDelayMax: 5000,
 				reconnectionDelay: 1000,
 			});
-			e.on("connect", (socket) => {
+			e.on("connect", () => {
 				var repo = new Map(), el = $(".events .table tbody"),
 				events = new Proxy(repo, {
 					get: (target, prop) => {
@@ -13,13 +13,13 @@
 								return function (k, v) {
 									if (target.has(k)) {
 										v = Object.assign(target.get(k), v);
-										var p = el.find(`tr[data-key='${k}']`);
+										var e = el.find(`tr[data-key='${k}']`);
 										if (v.status === 'shown') {
-											p.remove();
+											e.remove();
 											return;
 										} else {
 											if (["donation", "easter_egg"].indexOf(v.notification.type) !== -1) {
-												p.replaceWith(`
+												e.replaceWith(`
 												<tr data-key="${k}" data-type="donation" data-created-at="${v.created_at}" data-status=${v.status}>
 													<th scope="row">
 														<a onclick="e.emit('update', 'donation', {status: ${v.status === 'hidden' ? null : "\'hidden\'"}}, ${v.id});">
@@ -34,8 +34,8 @@
 													<td>${v.created_at}</td>
 												</tr>`);
 											} else if (v.notification.type === 'follower') {
-												p.replaceWith(`
-												<tr data-key="${k}" >
+												e.replaceWith(`
+												<tr data-key="${k}">
 													<th scope="row">
 														<a onclick="e.emit('update', 'follower', {status: ${v.status === 'hidden' ? null : "\'hidden\'"}}, ${v.id});">
 															${v.status === 'hidden' ?  '<i class="fa fa-eye"></i>' : '<i class="fa fa-eye-slash"></i>'}
@@ -51,7 +51,6 @@
 										}
 										target.set(k, v);
 									} else {
-										//console.log(v);
 										if (["donation", "easter_egg"].indexOf(v.notification.type) !== -1) {
 											el.append(`
 											<tr data-key="${k}" data-type="donation" data-created-at="${v.created_at}" data-status=${v.status}>
@@ -104,15 +103,22 @@
 
 				e.on("updated", (data) => {
 					if (data.success) {
-						var event = data.payload[0], k = CryptoJS.MD5(`${event.id}+${event.notification.type}`).toString();
-						if (events.has(k)) events.set(k, event);
+						data.payload.forEach((event) => {
+							var k = CryptoJS.MD5(`${event.id}+${event.notification.type}`).toString();
+							if (events.has(k)) events.set(k, event);
+						});
+						//var event = data.payload[0], k = CryptoJS.MD5(`${event.id}+${event.notification.type}`).toString();
+						//if (events.has(k)) events.set(k, event);
 					}
 				});
 
 				e.on("created", (data) => {
 					if (data.success) {
-						var event = data.payload[0];
-						events.set(CryptoJS.MD5(`${event.id}+${event.notification.type}`).toString(), event);
+						data.payload.forEach((event) => {
+							events.set(CryptoJS.MD5(`${event.id}+${event.notification.type}`).toString(), event);
+						});
+						//var event = data.payload[0];
+						//events.set(CryptoJS.MD5(`${event.id}+${event.notification.type}`).toString(), event);
 					}
 				});
 			});

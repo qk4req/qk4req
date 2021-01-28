@@ -1,16 +1,23 @@
 <?php
 namespace RBAC\Roles;
 
+use Controllers\{
+	EventsController
+};
 use Controllers\Widgets\{
-	HeaderController,
-	EventsController,
-	OlezhaController
+	HeaderController as HeaderWidgetController,
+	EventsController as EventsWidgetController,
+	OlezhaController as OlezhaWidgetController,
+	StakanController as StakanWidgetController
 };
 use Controllers\API\{
-	DonationsController,
-	FollowersController,
-	SubscriptionsController,
-	OnPublishController
+	DonationsController as DonationsAPIController,
+	FollowersController as FollowersAPIController,
+	SubscriptionsController as SubscriptionsAPIController,
+	VotingsController as VotingsAPIController,
+	VotingPointsController as VotingPointsAPIController,
+	VoteController as VoteAPIController,
+	//OnPublishController as OnPublishAPIController
 };
 
 use RBAC\Roles\{
@@ -39,14 +46,20 @@ return [
 	'roles' => new Roles([
 		new Guest(
 			[
-				DonationsController::class,
-				FollowersController::class,
-				SubscriptionsController::class,
-				//OnPublishController::class,
-				HeaderController::class,
-				EventsController::class,
-				OlezhaController::class,
-				\Controllers\EventsController::class
+				DonationsAPIController::class,
+				FollowersAPIController::class,
+				SubscriptionsAPIController::class,
+				VotingsAPIController::class,
+				VotingPointsAPIController::class,
+				VoteAPIController::class,
+
+				//OnPublishAPIController:class,
+				HeaderWidgetController::class,
+				EventsWidgetController::class,
+				OlezhaWidgetController::class,
+				StakanWidgetController::class,
+
+				EventsController::class
 			]
 		),
 		new User(
